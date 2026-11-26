@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cq801bd4oqklp" path="res://scenes/Door/Door.tscn" id="5_8l2wh"]
 [ext_resource type="Texture2D" uid="uid://0csnwr2v87wm" path="res://assets/scenes/living_room/tv_cabinet.png" id="5_guys8"]
 [ext_resource type="Texture2D" uid="uid://4jr88rcib4nt" path="res://assets/scenes/living_room/sofa_1.png" id="6_8es2r"]
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="6_ptxe3"]
 [ext_resource type="Texture2D" uid="uid://cly0th38viuxt" path="res://assets/scenes/living_room/window.png" id="7_vl021"]
 [ext_resource type="Texture2D" uid="uid://ba7jh8iydc3o4" path="res://assets/scenes/living_room/window_curtains.png" id="8_380gb"]
 
@@ -2518,51 +2517,51 @@ tile_set = SubResource("TileSet_vl021")
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=1201411389]
 
 [node name="WallTop" type="CollisionShape2D" parent="Collisions" unique_id=720708568]
-position = Vector2(192.0, 47.5)
+position = Vector2(192, 47.5)
 shape = SubResource("RectangleShape2D_colWallTop")
 
 [node name="WallLeftTop" type="CollisionShape2D" parent="Collisions" unique_id=163891757]
-position = Vector2(43.0, 143.5)
+position = Vector2(43, 143.5)
 shape = SubResource("RectangleShape2D_colWallLeftTop")
 
 [node name="WallLeftBottom" type="CollisionShape2D" parent="Collisions" unique_id=250803808]
-position = Vector2(43.0, 257.0)
+position = Vector2(43, 257)
 shape = SubResource("RectangleShape2D_colWallLeftBottom")
 
 [node name="DoorNookBack" type="CollisionShape2D" parent="Collisions" unique_id=1309338791]
-position = Vector2(27.5, 209.0)
+position = Vector2(27.5, 209)
 shape = SubResource("RectangleShape2D_colDoorNookBack")
 
 [node name="WallRightTop" type="CollisionShape2D" parent="Collisions" unique_id=1745590712]
-position = Vector2(348.0, 127.5)
+position = Vector2(348, 127.5)
 shape = SubResource("RectangleShape2D_colWallRightTop")
 
 [node name="WallRightBottom" type="CollisionShape2D" parent="Collisions" unique_id=331771287]
-position = Vector2(348.0, 240.0)
+position = Vector2(348, 240)
 shape = SubResource("RectangleShape2D_colWallRightBottom")
 
 [node name="DoorBack" type="CollisionShape2D" parent="Collisions" unique_id=959852040]
-position = Vector2(355.5, 176.0)
+position = Vector2(355.5, 176)
 shape = SubResource("RectangleShape2D_colDoorBack")
 
 [node name="WallBottom" type="CollisionShape2D" parent="Collisions" unique_id=331505394]
-position = Vector2(199.0, 272.0)
+position = Vector2(199, 272)
 shape = SubResource("RectangleShape2D_colWallBottom")
 
 [node name="Plant" type="CollisionShape2D" parent="Collisions" unique_id=1918024494]
-position = Vector2(104.0, 105.5)
+position = Vector2(104, 105.5)
 shape = SubResource("RectangleShape2D_colPlant")
 
 [node name="SofaTop" type="CollisionShape2D" parent="Collisions" unique_id=724709209]
-position = Vector2(151.0, 110.5)
+position = Vector2(151, 110.5)
 shape = SubResource("RectangleShape2D_colSofaTop")
 
 [node name="TvCabinet" type="CollisionShape2D" parent="Collisions" unique_id=930031501]
-position = Vector2(231.0, 100.0)
+position = Vector2(231, 100)
 shape = SubResource("RectangleShape2D_colTvCabinet")
 
 [node name="Armchair" type="CollisionShape2D" parent="Collisions" unique_id=243508821]
-position = Vector2(102.0, 146.5)
+position = Vector2(102, 146.5)
 shape = SubResource("RectangleShape2D_colArmchair")
 
 [node name="CoffeeTable" type="CollisionShape2D" parent="Collisions" unique_id=136272002]
@@ -2570,7 +2569,7 @@ position = Vector2(158.5, 148.5)
 shape = SubResource("RectangleShape2D_colCoffeeTable")
 
 [node name="SofaBottom" type="CollisionShape2D" parent="Collisions" unique_id=1919583882]
-position = Vector2(151.0, 181.0)
+position = Vector2(151, 181)
 shape = SubResource("RectangleShape2D_colSofaBottom")
 
 [node name="Hud" parent="." unique_id=555335849 instance=ExtResource("1_sbwet")]
@@ -2582,22 +2581,13 @@ position = Vector2(192, 144)
 
 [node name="Player" parent="." unique_id=1365855226 instance=ExtResource("4_v2mvq")]
 position = Vector2(231, 170)
+scale = Vector2(0.6, 0.6)
 
 [node name="Door_1" parent="." unique_id=545505144 instance=ExtResource("5_8l2wh")]
 position = Vector2(87, 211)
 
-[node name="Sprite2D" type="Sprite2D" parent="Door_1" unique_id=419349663]
-modulate = Color(1, 1, 1, 0.36862746)
-scale = Vector2(0.43749982, 0.41796887)
-texture = ExtResource("6_ptxe3")
-
 [node name="Door_2" parent="." unique_id=387741440 instance=ExtResource("5_8l2wh")]
 position = Vector2(313, 177)
-
-[node name="Sprite2D" type="Sprite2D" parent="Door_2" unique_id=1025516196]
-modulate = Color(1, 1, 1, 0.36862746)
-scale = Vector2(0.43749982, 0.41796887)
-texture = ExtResource("6_ptxe3")
 
 [node name="Tasks" type="Node2D" parent="." unique_id=1797322237]
 

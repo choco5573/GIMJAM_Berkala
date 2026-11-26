@@ -1333,13 +1333,14 @@ tile_set = SubResource("TileSet_ivrbv")
 [node name="character" type="Node2D" parent="." unique_id=613905002]
 unique_name_in_owner = true
 position = Vector2(142, 93)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.6, 0.6)
 script = ExtResource("2_1hmwh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="character" unique_id=2078504497]
 unique_name_in_owner = true
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_acinf")
-animation = &"right"
+animation = &"front"
 autoplay = "front_walk"
 
 [node name="Anchor" type="Control" parent="character/AnimatedSprite2D" unique_id=264913576]

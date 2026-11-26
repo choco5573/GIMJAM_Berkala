@@ -18,11 +18,10 @@ var question_count: int = 3
 # latar: kertas PR untuk "tugas", layar komputer untuk tutor online & UTBK
 const BG_TUGAS = preload("res://assets/tasks/assignment/tugas.png")
 const BG_SCREEN = preload("res://assets/tasks/assignment/utbk.png")
-const AREA_TUGAS = Rect2(82, 128, 240, 156)    # kotak putih di kertas
-const AREA_SCREEN = Rect2(132, 38, 198, 196)   # panel kanan di layar
+const AREA_TUGAS = Rect2(102, 128, 280, 125)    # kotak putih di kertas
+const AREA_SCREEN = Rect2(182, 38, 384, 157)   # panel kanan di layar
 const DARK_TEXT = Color(0.15, 0.13, 0.2)
 var bg: TextureRect
-
 
 func _ready() -> void:
 	for i in options.get_child_count():
@@ -36,17 +35,17 @@ func _ready() -> void:
 func _fit_small_screen() -> void:
 	question_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	question_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	question_label.custom_minimum_size = Vector2(340, 0)
+	question_label.custom_minimum_size = Vector2(320, 0)
 	if question_label.label_settings:
 		var ls: LabelSettings = question_label.label_settings.duplicate()
-		ls.font_size = 15
+		ls.font_size = 12
 		question_label.label_settings = ls
-	options.custom_minimum_size = Vector2(340, 0)
+	options.custom_minimum_size = Vector2(320, 0)
 	options.add_theme_constant_override("separation", 4)
 	for button in option_buttons:
-		button.custom_minimum_size = Vector2(340, 0)
+		button.custom_minimum_size = Vector2(320, 0)
 		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		button.add_theme_font_size_override("font_size", 13)
+		button.add_theme_font_size_override("font_size", 12)
 
 
 # Dipanggil dari skrip Node2D saat UI dibuka
@@ -117,7 +116,7 @@ func set_background(task_name: String) -> void:
 	box.position = area.position
 	box.size = area.size
 
-	var w = area.size.x - 8.0
+	var w = area.size.x 
 	question_label.custom_minimum_size = Vector2(w, 0)
 	options.custom_minimum_size = Vector2(w, 0)
 	for button in option_buttons:
@@ -127,5 +126,5 @@ func set_background(task_name: String) -> void:
 	for label in [question_label, progress_label]:
 		var ls: LabelSettings = label.label_settings.duplicate() if label.label_settings else LabelSettings.new()
 		ls.font_color = DARK_TEXT
-		ls.font_size = 14
+		ls.font_size = 12
 		label.label_settings = ls
