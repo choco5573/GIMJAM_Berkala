@@ -44,3 +44,11 @@ func _norm(dir: String) -> String:
 		"down": return "front"
 		"up": return "back"
 	return dir if DIRECTIONS.has(dir) else "front"
+
+func _process(_delta):
+	if GameManager.current_room == "Bedroom":
+		scale = Vector2(1.6, 1.6)
+	elif GameManager.current_room == "Park":
+		scale = Vector2(1, 1)
+	elif GameManager.current_room == "Livingroom":
+		scale = Vector2(0.6, 0.6)

@@ -7,7 +7,7 @@ signal task_completed
 var game_paused : bool =  false
 var on_task : bool = false
 var current_phase : String = "Kid"
-var current_room : String = "bedroom"
+var current_room : String = "Bedroom"
 var current_day : String = "1"
 var interact : bool = false
 var spawn_position : Vector2 = Vector2.ZERO
@@ -90,7 +90,7 @@ func load_room(room: String, spawn: Vector2) -> void:
 
 
 # mulai game baru (dipanggil dari main menu)
-'''func reset_progress() -> void:
+func reset_progress() -> void:
 	game_paused = false
 	on_task = false
 	interact = false
@@ -99,8 +99,7 @@ func load_room(room: String, spawn: Vector2) -> void:
 	current_day = "1"
 	current_room = ""
 	ToDoList.reset()
-	CutsceneManager.reset()'''
-
+	CutsceneManager.reset()
 
 # GAME QUIT
 func quit_game():
