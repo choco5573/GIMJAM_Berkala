@@ -1,4 +1,5 @@
 extends Node
+signal task_completed
 
 # Game_Manager = script yang selalu di run di semua scene. (Kalau mau diubah, kasih tau semua yang lain)
 # Game_Managernya udah ku add sebagai AutoLoad. Jadi bisa dipanggil discene mana aja (ex : GameManager.load_main_menu())
