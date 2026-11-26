@@ -216,6 +216,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 		var skip_button_was_pressed: bool = event.is_action_pressed(skip_action)
 		if mouse_was_clicked or skip_button_was_pressed:
 			get_viewport().set_input_as_handled()
+			CutsceneManager.play_text_sfx()
 			dialogue_label.skip_typing()
 			return
 
@@ -225,8 +226,10 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		CutsceneManager.play_text_sfx()
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
+		CutsceneManager.play_text_sfx()
 		next(dialogue_line.next_id)
 
 
