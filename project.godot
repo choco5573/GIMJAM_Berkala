@@ -30,6 +30,7 @@ CutscenesListKid="*uid://x8lh547i4xq4"
 CutscenesListTeen="*uid://b2nfmouqefm3o"
 StoryDirector="*res://naratives/Story_Director.gd"
 PauseMenu="*res://scripts/UI_scripts/Pause_Menu.gd"
+MusicManager="*uid://rt16qv38jebi"
 
 [dialogue_manager]
 

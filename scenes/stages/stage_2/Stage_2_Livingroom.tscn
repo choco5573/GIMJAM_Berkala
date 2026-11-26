@@ -1354,7 +1354,7 @@ shape = SubResource("RectangleShape2D_colSofaBottom")
 position = Vector2(192, 144)
 
 [node name="Player" parent="." unique_id=1365855226 instance=ExtResource("4_3pita")]
-position = Vector2(191, 202)
+position = Vector2(159, 362)
 scale = Vector2(0.6, 0.6)
 
 [node name="Door_1" parent="." unique_id=545505144 instance=ExtResource("5_bgcjy")]

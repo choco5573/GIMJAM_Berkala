@@ -244,6 +244,14 @@ var overlay_tween: Tween
 const SFX_NEW_DAY = preload("res://assets/audios/Transisi Diari ke Next day.mp3")
 var day_sfx: AudioStreamPlayer
 
+# suara task berhasil / gagal. GANTI path sesuai nama file audiomu.
+# Dimuat dengan load() (bukan preload): kalau path salah, game tetap jalan, hanya tanpa suara.
+const SFX_TASK_SUCCESS_PATH = "res://assets/audios/TaskSuccess.mp3"
+const SFX_TASK_FAIL_PATH = "res://assets/audios/TaskFail.mp3"
+var sfx_task_success: AudioStream
+var sfx_task_fail: AudioStream
+var task_sfx: AudioStreamPlayer
+
 func _ready() -> void:
 	overlay_layer = CanvasLayer.new()
 	overlay_layer.layer = 128
@@ -267,6 +275,19 @@ func _ready() -> void:
 	day_sfx.stream = SFX_NEW_DAY
 	day_sfx.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(day_sfx)
+
+	task_sfx = AudioStreamPlayer.new()
+	add_child(task_sfx)
+	sfx_task_success = _load_sound(SFX_TASK_SUCCESS_PATH)
+	sfx_task_fail = _load_sound(SFX_TASK_FAIL_PATH)
+
+
+func _load_sound(path: String) -> AudioStream:
+	if ResourceLoader.exists(path):
+		return load(path)
+	push_warning("File suara tidak ditemukan: " + path)
+	return null
+
 
 # ===================== DIPANGGIL STAGE =====================
 
@@ -397,6 +418,10 @@ func _spawn_task(step: Dictionary) -> void:
 	if task.has_method("configure"):
 		task.configure(task_name)
 	task.task_solved.connect(_on_task_solved.bind(task_name, task), CONNECT_ONE_SHOT)
+	# suara gagal untuk minigame yang bisa gagal (PR/UTBK, rapat online, tugas kantor)
+	var ui = task.get("game_ui")
+	if ui and ui.has_signal("failed"):
+		ui.failed.connect(_play_task_sfx.bind(sfx_task_fail))
 
 	spawned_task = task
 	spawned_task_name = task_name
@@ -414,12 +439,19 @@ func _mark_position(parent: Node, mark_name: String) -> Vector2:
 
 
 func _on_task_solved(task_name: String, task: Node) -> void:
+	_play_task_sfx(sfx_task_success)
 	ToDoList.complete_task(GameManager.current_phase, int(GameManager.current_day), task_name)
 	if is_instance_valid(task):
 		task.queue_free()
 	spawned_task = null
 	spawned_task_name = ""
 	refresh.call_deferred()
+
+
+func _play_task_sfx(stream: AudioStream) -> void:
+	if stream == null: return
+	task_sfx.stream = stream
+	task_sfx.play()
 
 
 # ===================== PINDAH RUANGAN / HARI =====================
@@ -503,7 +535,7 @@ func _transition(text: String, on_black: Callable) -> void:
 	overlay_label.text = text
 	overlay_tween = create_tween()
 	overlay_tween.tween_property(overlay_rect, "color:a", 1.0, 0.8)
-	overlay_tween.tween_callback(day_sfx.play)  
+	overlay_tween.tween_callback(day_sfx.play)
 	overlay_tween.tween_property(overlay_label, "modulate:a", 1.0, 0.5)
 	overlay_tween.tween_interval(1.2)
 	overlay_tween.tween_callback(on_black)

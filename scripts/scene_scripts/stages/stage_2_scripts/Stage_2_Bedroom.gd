@@ -8,11 +8,12 @@ extends Node2D
 
 const SpawnLocation = preload("res://scripts/Spawn_Location.gd")
 var current_room : String = "Bedroom"
+const MUSIC_Teen = preload("res://assets/audios/Teenager.mp3")  
 
 
 func _ready() -> void:
 	GameManager.current_room = current_room
-
+	MusicManager.play(MUSIC_Teen)
 	diary.diary_solved.connect(change_time)
 	print("Hello Stage 2 Bedroom")
 	hud.room_label.text = current_room

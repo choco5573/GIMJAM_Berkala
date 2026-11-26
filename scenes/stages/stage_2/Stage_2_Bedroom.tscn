@@ -173,7 +173,7 @@ shape = SubResource("RectangleShape2D_colEdgeBottom")
 position = Vector2(192, 144)
 
 [node name="Player" parent="." unique_id=1365855226 instance=ExtResource("4_ygtoy")]
-position = Vector2(143, 57)
+position = Vector2(93, 375.99997)
 scale = Vector2(1.6, 1.6)
 
 [node name="Door" parent="." unique_id=545505144 instance=ExtResource("5_4yq7h")]

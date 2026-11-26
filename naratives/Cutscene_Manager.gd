@@ -4,6 +4,8 @@ signal cutscene_finished
 
 const BALLOON = preload("res://naratives/balloon/balloon.tscn")
 const MAMA_SCENE_PATH = "res://scenes/npc/Mama_NPC.tscn"
+const SFX_TEXT = preload("res://assets/audios/MenuCycle&Select.mp3")   
+var text_sfx: AudioStreamPlayer
 
 var playing: bool = false
 var player_camera: Camera2D
@@ -41,7 +43,9 @@ func _ready() -> void:
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	fade_rect.set_anchors_preset(Control.PRESET_FULL_RECT)
 	fade_layer.add_child(fade_rect)
-
+	text_sfx = AudioStreamPlayer.new()
+	text_sfx.stream = SFX_TEXT
+	add_child(text_sfx)
 
 # mulai game baru
 func reset() -> void:
@@ -372,3 +376,7 @@ func _finish_cutscene() -> void:
 	travel_cam.enabled = false
 	GameManager.on_task = false
 	cutscene_finished.emit()
+
+
+func play_text_sfx() -> void:
+	text_sfx.play()
