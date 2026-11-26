@@ -241,7 +241,8 @@ var overlay_layer: CanvasLayer
 var overlay_rect: ColorRect
 var overlay_label: Label
 var overlay_tween: Tween
-
+const SFX_NEW_DAY = preload("res://assets/audios/Transisi Diari ke Next day.mp3")
+var day_sfx: AudioStreamPlayer
 
 func _ready() -> void:
 	overlay_layer = CanvasLayer.new()
@@ -262,7 +263,10 @@ func _ready() -> void:
 	overlay_label.add_theme_font_size_override("font_size", 26)
 	overlay_label.modulate.a = 0.0
 	overlay_layer.add_child(overlay_label)
-
+	day_sfx = AudioStreamPlayer.new()
+	day_sfx.stream = SFX_NEW_DAY
+	day_sfx.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(day_sfx)
 
 # ===================== DIPANGGIL STAGE =====================
 
@@ -499,13 +503,13 @@ func _transition(text: String, on_black: Callable) -> void:
 	overlay_label.text = text
 	overlay_tween = create_tween()
 	overlay_tween.tween_property(overlay_rect, "color:a", 1.0, 0.8)
+	overlay_tween.tween_callback(day_sfx.play)  
 	overlay_tween.tween_property(overlay_label, "modulate:a", 1.0, 0.5)
 	overlay_tween.tween_interval(1.2)
 	overlay_tween.tween_callback(on_black)
 	overlay_tween.tween_property(overlay_label, "modulate:a", 0.0, 0.5)
 	overlay_tween.tween_property(overlay_rect, "color:a", 0.0, 0.8)
 	overlay_tween.tween_callback(_transition_done)
-
 
 func _transition_done() -> void:
 	busy = false

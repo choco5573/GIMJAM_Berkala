@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://bme024t5iow4" path="res://tasks/office_work_game/Office_Work_Game_UI.gd" id="1_v0j1k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vcx1"]
-font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_v0j1k"]
-font_size = 16
 
 [node name="OfficeWorkGameUi" type="Control" unique_id=1053954740]
 layout_mode = 3
