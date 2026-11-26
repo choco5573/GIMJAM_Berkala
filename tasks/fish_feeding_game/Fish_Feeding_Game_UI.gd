@@ -24,6 +24,8 @@ var running: bool = false
 var shake_count: int = 0
 var last_dir: int = 0
 var anchor_x: float = 0.0
+const BGM = preload("res://assets/audios/AirIkan.mp3")
+var bgm: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -36,6 +38,12 @@ func _ready() -> void:
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = SFX_SHAKE
 	add_child(sfx)
+	
+	bgm = AudioStreamPlayer.new()
+	bgm.stream = BGM
+	bgm.stream.loop = true
+	bgm.volume_db = -6.0
+	add_child(bgm)
 
 func start() -> void:
 	food_falling = false
@@ -52,14 +60,14 @@ func start() -> void:
 
 	running = true
 	set_process(true)
-
+	bgm.play()
 
 func stop() -> void:
 	running = false
 	set_process(false)
 	food_can.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	bgm.stop()
 
 func _exit_tree() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

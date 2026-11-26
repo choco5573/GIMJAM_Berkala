@@ -70,7 +70,6 @@ func _ready() -> void:
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = SFX_DROP
 	add_child(sfx)
-	start()
 
 # tali jemuran melewati semua tempat jemuran
 func _make_line() -> void:

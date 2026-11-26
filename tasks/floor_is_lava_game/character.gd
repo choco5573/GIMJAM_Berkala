@@ -29,7 +29,15 @@ var press_time: float = 0
 var jump_height = min_distance
 var is_holding = false
 var is_jumping = false
+const SFX_JUMP = preload("res://assets/audios/Loncat.mp3") 
+var jump_sfx: AudioStreamPlayer
 
+
+func _ready() -> void:
+	jump_sfx = AudioStreamPlayer.new()
+	jump_sfx.stream = SFX_JUMP
+	add_child(jump_sfx)
+	
 func _process(delta):
 	if not active and not is_launch:
 		return
@@ -106,6 +114,8 @@ func LaunchProjectile(initial_pos: Vector2, direction: Vector2, desired_distance
 	
 	z_axis = 0
 	is_launch = true
+	jump_sfx.pitch_scale = randf_range(0.95, 1.05)
+	jump_sfx.play()
 
 func hold_jump(delta):
 	press_time += delta

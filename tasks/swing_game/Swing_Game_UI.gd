@@ -31,7 +31,8 @@ var sfx: AudioStreamPlayer
 var speed: float = 0.0
 var direction: int = 1
 var running: bool = false
-
+const BGM = preload("res://assets/audios/AyunanKonstan.mp3")
+var bgm: AudioStreamPlayer
 
 func _ready() -> void:
 	indicator.text = str(current_level) + '/'+ str(len(levels))
@@ -40,7 +41,13 @@ func _ready() -> void:
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = SFX_HIT
 	add_child(sfx)
-	start()
+	
+	bgm = AudioStreamPlayer.new()
+	bgm.stream = BGM
+	bgm.stream.loop = true
+	bgm.volume_db = -6.0
+	add_child(bgm)
+
 
 func _make_swing_sprite() -> void:
 	var frames = SpriteFrames.new()
@@ -64,6 +71,7 @@ func start() -> void:
 	start_level()
 	running = true
 	set_process(true)
+	bgm.play()
 
 
 func stop() -> void:
@@ -71,7 +79,8 @@ func stop() -> void:
 	set_process(false)
 	if swing_sprite:
 		swing_sprite.stop()
-
+	bgm.stop()
+	
 
 func start_level() -> void:
 	if swing_sprite:

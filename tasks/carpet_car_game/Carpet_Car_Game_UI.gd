@@ -31,7 +31,8 @@ var spawn_left: float = 0.0
 var invuln_left: float = 0.0
 var knockback: float = 0.0
 var start_position: Vector2
-
+const BGM = preload("res://assets/audios/MobilMainan.mp3")
+var bgm: AudioStreamPlayer
 
 func _ready() -> void:
 	start_position = player_car.position
@@ -42,9 +43,16 @@ func _ready() -> void:
 	progress_bar.show_percentage = false
 	progress_bar.fill_mode = ProgressBar.FILL_BOTTOM_TO_TOP
 	sfx = AudioStreamPlayer.new()
+	
 	sfx.stream = SFX_CRASH
 	add_child(sfx)
-
+	
+	bgm = AudioStreamPlayer.new()
+	bgm.stream = BGM
+	bgm.stream.loop = true   
+	bgm.volume_db = -12.0
+	add_child(bgm)
+	
 func start() -> void:
 	for obs in obstacles.get_children():
 		obstacles.remove_child(obs)
@@ -69,12 +77,13 @@ func start() -> void:
 
 	running = true
 	set_process(true)
+	bgm.play()
 
 
 func stop() -> void:
 	running = false
 	set_process(false)
-
+	bgm.stop()
 
 func _process(delta: float) -> void:
 	if not running: return
