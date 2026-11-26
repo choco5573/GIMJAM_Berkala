@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkryynl2bdelg"]
 
 [ext_resource type="Script" uid="uid://pj8rvt7i22yy" path="res://tasks/carpet_car_game/Carpet_Car_Game_Task.gd" id="1_oo8l2"]
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_10lwy"]
+[ext_resource type="Texture2D" uid="uid://c8k0e3qqm7o4q" path="res://tasks/carpet_car_game/Bomboklat (bombocar).png" id="2_0qin0"]
 [ext_resource type="PackedScene" uid="uid://cvx7oo4jo2gh2" path="res://tasks/carpet_car_game/Carpet_Car_Game_UI.tscn" id="3_0qin0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qin0"]
@@ -9,7 +9,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5txan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxuc"]
-size = Vector2(21.11111, 21.11111)
+size = Vector2(5.203252, 5.217391)
 
 [node name="CarpetCarGameTask" type="Node2D" unique_id=1718282321]
 scale = Vector2(0.5, 0.5)
@@ -22,14 +22,15 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_0qin0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1110931758]
-position = Vector2(0, -20)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_10lwy")
+position = Vector2(0, -16)
+scale = Vector2(0.95, 0.9999999)
+texture = ExtResource("2_0qin0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=872738164]
 physics_material_override = SubResource("PhysicsMaterial_5txan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=712733384]
+position = Vector2(9.536743e-07, -9.536743e-07)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ekxuc")
 
