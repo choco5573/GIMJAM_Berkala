@@ -8,6 +8,7 @@ do CutsceneManager.move_player_to(200, 150, 1.5)
 Lara: hmm... [#neutral]
 do CutsceneManager.move_player_to(255, 130, 0.8)
 do CutsceneManager.fade_out(0.5)
+do CutsceneManager.play_sfx("res://assets/audios/makanPasir.mp3")
 [i](Nyam... nyam...)[/i]
 do CutsceneManager.fade_in(0.3)
 do CutsceneManager.show_mama(20, 200, "right")

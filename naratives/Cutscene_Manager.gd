@@ -380,3 +380,15 @@ func _finish_cutscene() -> void:
 
 func play_text_sfx() -> void:
 	text_sfx.play()
+	
+	
+func play_sfx(path: String, volume: float = 0.0) -> void:
+	if not ResourceLoader.exists(path):
+		push_warning("Suara tidak ketemu: " + path)
+		return
+	var sfx = AudioStreamPlayer.new()
+	sfx.stream = load(path)
+	sfx.volume_db = volume
+	add_child(sfx)
+	sfx.play()
+	sfx.finished.connect(sfx.queue_free)

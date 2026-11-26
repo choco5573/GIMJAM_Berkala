@@ -12,6 +12,8 @@ signal solved
 @onready var fish2: AnimatedSprite2D = $Aquarium/Fishes/Fish2
 @onready var food_drop: CPUParticles2D = $Aquarium/FoodDrop
 @onready var food_can: TextureRect = $FoodCan
+const SFX_SHAKE = preload("res://assets/audios/MakananIkan.mp3") 
+var sfx: AudioStreamPlayer
 
 var fishes: Array = []
 var speeds: Array = []
@@ -31,7 +33,9 @@ func _ready() -> void:
 	food_can.visible = false
 	_setup_food_particles()
 	set_process(false)
-
+	sfx = AudioStreamPlayer.new()
+	sfx.stream = SFX_SHAKE
+	add_child(sfx)
 
 func start() -> void:
 	food_falling = false
@@ -106,6 +110,7 @@ func _check_shake(mouse_pos: Vector2) -> void:
 
 
 func _drop_food() -> void:
+	sfx.play()
 	food_drop.global_position = food_can.global_position + Vector2(food_can.size.x / 2.0, food_can.size.y)
 	food_drop.restart()
 	food_falling = true

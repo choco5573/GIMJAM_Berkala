@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://cvx7oo4jo2gh2"]
 
 [ext_resource type="Script" uid="uid://ckac20suo3jne" path="res://tasks/carpet_car_game/Carpet_Car_Game_UI.gd" id="1_lydbu"]
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_vtgc7"]
-[ext_resource type="Texture2D" path="res://assets/tasks/carpet_car/bombocar.png" id="3_cars"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_car_1"]
-atlas = ExtResource("3_cars")
-region = Rect2(2, 1, 10, 14)
+[ext_resource type="Texture2D" uid="uid://osid2xm17lvr" path="res://assets/tasks/carpet_car/bombocar.png" id="3_cars"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_car_2"]
 atlas = ExtResource("3_cars")
@@ -19,6 +14,10 @@ region = Rect2(2, 17, 10, 14)
 [sub_resource type="AtlasTexture" id="AtlasTexture_car_4"]
 atlas = ExtResource("3_cars")
 region = Rect2(19, 17, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car_1"]
+atlas = ExtResource("3_cars")
+region = Rect2(2, 1, 10, 14)
 
 [node name="CarpetCarGameUi" type="Control" unique_id=468111986]
 layout_mode = 3

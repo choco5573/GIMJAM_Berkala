@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://d2dv0ypj87xfx"]
 
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_cq8dk"]
-[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish.png" id="5_fish"]
-[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/water.png" id="6_water"]
-[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish_food_box.png" id="7_box"]
-[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish_food.png" id="8_food"]
 [ext_resource type="Script" uid="uid://bp0q0tea1c82a" path="res://tasks/fish_feeding_game/Fish_Feeding_Game_UI.gd" id="1_hasal"]
+[ext_resource type="Texture2D" uid="uid://y2fcih6kawem" path="res://assets/tasks/fish_feeding/fish.png" id="5_fish"]
+[ext_resource type="Texture2D" uid="uid://c85k3et115vqs" path="res://assets/tasks/fish_feeding/water.png" id="6_water"]
+[ext_resource type="Texture2D" uid="uid://cn4ppsw7gacu0" path="res://assets/tasks/fish_feeding/fish_food_box.png" id="7_box"]
+[ext_resource type="Texture2D" uid="uid://cyah5aw3vilqn" path="res://assets/tasks/fish_feeding/fish_food.png" id="8_food"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
 animations = [{
@@ -59,14 +58,14 @@ offset_bottom = 40.0
 
 [node name="Fish1" type="AnimatedSprite2D" parent="Aquarium/Fishes" unique_id=1123141337]
 position = Vector2(300, 184)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5h11f")
 autoplay = "default"
-scale = Vector2(1.5, 1.5)
 
 [node name="Fish2" type="AnimatedSprite2D" parent="Aquarium/Fishes" unique_id=2000319914]
 position = Vector2(45, 97)
-sprite_frames = SubResource("SpriteFrames_bx8n8")
 scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_bx8n8")
 
 [node name="FoodDrop" type="CPUParticles2D" parent="Aquarium" unique_id=773350225]
 position = Vector2(145, 0)

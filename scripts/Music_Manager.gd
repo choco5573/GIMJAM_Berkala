@@ -15,6 +15,8 @@ func _ready() -> void:
 func play(stream: AudioStream, fade_time: float = 1.0) -> void:
 	if player.stream == stream and player.playing:
 		return
+	if "loop" in stream:
+		stream.loop = true
 	if fade_tween:
 		fade_tween.kill()
 	player.stream = stream
