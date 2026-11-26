@@ -17,6 +17,9 @@ const CLOTHES_COLORS: Array = [
 	Color(0.8, 1.0, 0.8),
 	Color(0.9, 0.8, 1.0),
 ]
+const SFX_DROP = preload("res://assets/audios/Jemur Baju.mp3")
+
+var sfx: AudioStreamPlayer
 
 @onready var holder: Control = $MarginContainer
 
@@ -63,7 +66,11 @@ func _ready() -> void:
 	title_label.add_theme_constant_override("outline_size", 4)
 	title_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(title_label)
-
+	
+	sfx = AudioStreamPlayer.new()
+	sfx.stream = SFX_DROP
+	add_child(sfx)
+	start()
 
 # tali jemuran melewati semua tempat jemuran
 func _make_line() -> void:
@@ -149,6 +156,7 @@ func _drop() -> void:
 	var tween = create_tween()
 	if target:
 		placed[c] = target
+		_play_drop()
 		tween.tween_property(c, "global_position", target.global_position, 0.15)
 		if placed.size() >= clothes_list.size():
 			tween.tween_callback(_finish)
@@ -156,8 +164,17 @@ func _drop() -> void:
 		var i = clothes_list.find(c)
 		tween.tween_property(c, "position", start_positions[i], 0.2)
 
-
 func _finish() -> void:
 	if not running: return
+	sfx.reparent(get_tree().current_scene)
+	sfx.finished.connect(sfx.queue_free, CONNECT_ONE_SHOT)
 	stop()
 	solved.emit()
+
+
+func _play_drop() -> void:
+	if not is_instance_valid(sfx) or sfx.get_parent() != self:
+		sfx = AudioStreamPlayer.new()
+		sfx.stream = SFX_DROP
+		add_child(sfx)
+	sfx.play()

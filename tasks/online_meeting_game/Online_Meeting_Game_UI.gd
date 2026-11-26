@@ -9,6 +9,8 @@ signal failed
 
 const QTE = preload("res://tasks/online_meeting_game/qte.tscn")
 const BG_MEETING = preload("res://assets/tasks/assignment/utbk.png")   # layar video call
+const SFX_SUCCESS = preload("res://assets/audios/Kantor dan Meeting Key yang benar.mp3")  
+const SFX_FAIL = preload("res://assets/audios/PressedTheWrongKey.mp3")         
 
 @export var keys_per_meeting: int = 8
 @export var needed_success: int = 6
@@ -36,6 +38,7 @@ var gap_left: float = 0.0
 var current_qte: Node = null
 var title_label: Label
 var score_label: Label
+var sfx: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -65,7 +68,8 @@ func _ready() -> void:
 	title_label = _make_label(Vector2(8, 6), 16)
 	title_label.text = "Rapat online - tekan huruf yang muncul!"
 	score_label = _make_label(Vector2(8, 264), 14)
-
+	sfx = AudioStreamPlayer.new()
+	add_child(sfx)
 
 func _make_label(pos: Vector2, font_size: int) -> Label:
 	var label = Label.new()
@@ -124,6 +128,10 @@ func _on_key_finished(is_success: bool) -> void:
 	count += 1
 	if is_success:
 		success += 1
+		sfx.stream = SFX_SUCCESS
+	else:
+		sfx.stream = SFX_FAIL
+	sfx.play()
 	current_qte = null
 	gap_left = gap_time
 	_update_score()
@@ -134,13 +142,15 @@ func _update_score() -> void:
 
 
 func _finish() -> void:
-	stop()
 	if success >= needed_success:
+		sfx.reparent(get_tree().current_scene)
+		sfx.finished.connect(sfx.queue_free, CONNECT_ONE_SHOT)
+		stop()
 		solved.emit()
 	else:
+		stop()
 		failed.emit()
 
 
-# sambungan lama dari scene (Timer). Tidak dipakai lagi.
 func _on_timer_timeout() -> void:
 	pass

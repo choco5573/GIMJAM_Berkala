@@ -19,7 +19,10 @@ var time_left: float = 0.0
 
 
 const BG_KERJA = preload("res://assets/tasks/office/kerja.png")
+const SFX_SUCCESS = preload("res://assets/audios/Kantor dan Meeting Key yang benar.mp3")   
+const SFX_FAIL = preload("res://assets/audios/PressedTheWrongKey.mp3")        
 
+var sfx: AudioStreamPlayer
 
 func _ready() -> void:
 	set_process(false)
@@ -29,6 +32,7 @@ func _ready() -> void:
 	fill_style = StyleBoxFlat.new()
 	fill_style.set_corner_radius_all(4)
 	time_bar.add_theme_stylebox_override("fill", fill_style) 
+
 
 func start() -> void:
 	current_round = 0
@@ -55,6 +59,7 @@ func next_key() -> void:
 	time_left = time_per_key
 	time_bar.max_value = time_per_key
 	update_bar()
+	
 
 
 func _process(delta: float) -> void:
@@ -80,7 +85,9 @@ func _input(event: InputEvent) -> void:
 
 	if key_event.keycode == current_key:
 		current_round += 1
+		_play_sfx(SFX_SUCCESS)
 		if current_round >= rounds_needed:
+			_keep_sound_alive()
 			stop()
 			solved.emit()
 		else:
@@ -90,8 +97,22 @@ func _input(event: InputEvent) -> void:
 
 
 func fail() -> void:
+	_play_sfx(SFX_FAIL)
 	stop()
 	failed.emit()
+
+
+func _play_sfx(stream: AudioStream) -> void:
+	if not is_instance_valid(sfx) or sfx.get_parent() != self:
+		sfx = AudioStreamPlayer.new()
+		add_child(sfx)
+	sfx.stream = stream
+	sfx.play()
+
+
+func _keep_sound_alive() -> void:
+	sfx.reparent(get_tree().current_scene)
+	sfx.finished.connect(sfx.queue_free, CONNECT_ONE_SHOT)
 	
 func update_bar() -> void:
 	time_bar.value = time_left

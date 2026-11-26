@@ -7,7 +7,9 @@ signal solved
 @onready var dirts: Control = $Floor/Dirts
 @onready var broom_head: TextureButton = $BroomHead
 @onready var click_hint: AnimatedSprite2D = $ClickHint
+const SFX_CLICK = preload("res://assets/audios/Nyapu.mp3")   
 
+var sfx: AudioStreamPlayer
 var dirt_health: Dictionary = {}
 var remaining: int = 0
 var running: bool = false
@@ -18,6 +20,11 @@ func _ready() -> void:
 	broom_head.visible = false
 	click_hint.visible = false
 	_make_title()
+	
+	sfx = AudioStreamPlayer.new()
+	sfx.stream = SFX_CLICK
+	add_child(sfx)
+	start()
 
 
 # judul kecil di atas: "Sapu" atau "Pel"
@@ -104,6 +111,12 @@ func _process(delta: float) -> void:
 				solved.emit()
 				return
 
+func _input(event: InputEvent) -> void:
+	if not running: return
+	var mb := event as InputEventMouseButton
+	if mb == null: return
+	if mb.button_index == MOUSE_BUTTON_LEFT and mb.pressed:
+		sfx.play()
 
 func _is_over_dirt(mouse_pos: Vector2) -> bool:
 	for dirt in dirt_health.keys():

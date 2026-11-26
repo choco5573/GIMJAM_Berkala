@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmcypw2s4brdy"
+path="res://.godot/imported/Kantor dan Meeting Key yang benar.mp3-bde1640460f7d4e675f91949e39a346d.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Kantor dan Meeting Key yang benar.mp3"
+dest_files=["res://.godot/imported/Kantor dan Meeting Key yang benar.mp3-bde1640460f7d4e675f91949e39a346d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

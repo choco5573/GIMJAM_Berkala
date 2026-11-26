@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccwj0lwtk521t"
+path="res://.godot/imported/Jemur Baju.mp3-836e4fdce4aa4555c4379153761c2f25.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Jemur Baju.mp3"
+dest_files=["res://.godot/imported/Jemur Baju.mp3-836e4fdce4aa4555c4379153761c2f25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
