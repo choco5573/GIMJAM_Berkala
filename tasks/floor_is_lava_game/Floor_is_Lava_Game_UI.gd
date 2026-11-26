@@ -36,7 +36,12 @@ var start_position: Vector2
 var info_label: Label
 var reset_tween: Tween
 
-
+func _process(delta: float) -> void:
+	if character.position.y > 155:
+		$"Sofa Back".z_index = 0
+	else:
+		$"Sofa Back".z_index = 6
+		
 func _ready() -> void:
 	start_position = character.position
 	character.active = false
