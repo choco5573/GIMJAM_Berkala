@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b01t7488dqdgm"]
+
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_a6o0g"]
+[ext_resource type="Script" uid="uid://bvwopils0o4wv" path="res://tasks/template/Template_Game_Task.gd" id="1_ohnl5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohnl5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tlas4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t2bo"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="TemplateGameTask" type="Node2D" unique_id=610671696]
+script = ExtResource("1_ohnl5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=45286825]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2081216883]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_ohnl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=895789733]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_a6o0g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=2065955793]
+physics_material_override = SubResource("PhysicsMaterial_tlas4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=352857108]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_3t2bo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=371024930]
+visible = false

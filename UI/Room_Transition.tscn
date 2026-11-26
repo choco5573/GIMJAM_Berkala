@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://douog27oefphu"]
+
+[ext_resource type="Script" uid="uid://qsqjmrfy6hsq" path="res://scripts/UI_scripts/Room_Transition.gd" id="1_qyoep"]
+
+[sub_resource type="Animation" id="Animation_bhnhs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qyoep"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ryv65"]
+_data = {
+&"RESET": SubResource("Animation_bhnhs"),
+&"default": SubResource("Animation_qyoep")
+}
+
+[node name="RoomTransition" type="CanvasLayer" unique_id=1151096404]
+script = ExtResource("1_qyoep")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1394785522]
+libraries/ = SubResource("AnimationLibrary_ryv65")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=650942628]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

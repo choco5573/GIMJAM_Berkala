@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cgg24ypeybn2o"]
+
+[ext_resource type="Script" uid="uid://boxbe0ghkdlv2" path="res://tasks/jemur_game/thingies/clothes.gd" id="1_ba362"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_usy2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gfkqv"]
+radius = 45.472843
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qem12"]
+size = Vector2(128, 128)
+
+[node name="Clothes" type="Node2D" unique_id=1064878870]
+script = ExtResource("1_ba362")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=397457836]
+texture = ExtResource("2_usy2w")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1741577807]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=362010571]
+visible = false
+position = Vector2(0, -64)
+rotation = 0.06981317
+skew = 1.4398966
+shape = SubResource("CircleShape2D_gfkqv")
+
+[node name="tes" type="CollisionShape2D" parent="Area2D" unique_id=1996647813]
+shape = SubResource("RectangleShape2D_qem12")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

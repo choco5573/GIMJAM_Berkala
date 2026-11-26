@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://2kln4qertbwn"
+path="res://.godot/imported/Kid_Day1_1.dialogue-4bec30ea7afb92c0bcf3937dda94836a.tres"
+
+[deps]
+
+source_file="res://naratives/cutscenes/kid_day1/Kid_Day1_1.dialogue"
+dest_files=["res://.godot/imported/Kid_Day1_1.dialogue-4bec30ea7afb92c0bcf3937dda94836a.tres"]
+
+[params]
+
+defaults=true

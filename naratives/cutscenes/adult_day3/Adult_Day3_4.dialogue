@@ -1,0 +1,7 @@
+~ Adult_Day3_4
+Lara: Akhirnya. [#tireed]
+Lara: Mencuci pakaian itu sangat membosankan. [#misery]
+Lara: Aku harus makan... Aku tidak mau ibu khawatir. [#neutral]
+[i](Lara kembali ke dalam rumah.)[/i]
+do CutsceneManager.move_player_to(20, 200, 1.5)
+=> END

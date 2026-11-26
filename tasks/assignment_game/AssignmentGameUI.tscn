@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bx2flp86gyryc"]
+
+[ext_resource type="Script" uid="uid://c2wfhme7w2lnl" path="res://tasks/assignment_game/Assignment_Game_UI.gd" id="1_msy6u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v17mh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4vou"]
+
+[node name="AssignmentGameUi" type="Control" unique_id=107368754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_msy6u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1672650285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=319184490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=712403487]
+layout_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1393660295]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "X/N"
+label_settings = SubResource("LabelSettings_v17mh")
+
+[node name="QuestionLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1440765241]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Questions"
+label_settings = SubResource("LabelSettings_s4vou")
+
+[node name="Options" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1299709082]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 18
+
+[node name="Option1" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Options" unique_id=368804149]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Option2" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Options" unique_id=1180336806]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Option3" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Options" unique_id=778711364]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Option4" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Options" unique_id=1242766586]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Option5" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Options" unique_id=1513153613]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4

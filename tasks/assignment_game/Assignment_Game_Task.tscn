@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://8grjgvfusx3b"]
+
+[ext_resource type="Script" uid="uid://rfse6hcpugk6" path="res://tasks/assignment_game/Assignment_Game_Task.gd" id="1_avfhj"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_cmy6w"]
+[ext_resource type="PackedScene" uid="uid://bx2flp86gyryc" path="res://tasks/assignment_game/AssignmentGameUI.tscn" id="3_jidg3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jidg3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7bdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ayl"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="AssignmentGameTask" type="Node2D" unique_id=77828002]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_avfhj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=254441812]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1997824350]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_jidg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=524933904]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_cmy6w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=1601417946]
+physics_material_override = SubResource("PhysicsMaterial_q7bdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=1542191653]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_r3ayl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1913404838]
+visible = false
+
+[node name="AssignmentGameUi" parent="CanvasLayer" unique_id=107368754 instance=ExtResource("3_jidg3")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

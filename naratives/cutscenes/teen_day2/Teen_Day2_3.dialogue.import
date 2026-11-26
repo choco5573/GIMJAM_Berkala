@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cw61w5iovgxsq"
+path="res://.godot/imported/Teen_Day2_3.dialogue-b138500b367ab632d53b14101101597f.tres"
+
+[deps]
+
+source_file="res://naratives/cutscenes/teen_day2/Teen_Day2_3.dialogue"
+dest_files=["res://.godot/imported/Teen_Day2_3.dialogue-b138500b367ab632d53b14101101597f.tres"]
+
+[params]
+
+defaults=true

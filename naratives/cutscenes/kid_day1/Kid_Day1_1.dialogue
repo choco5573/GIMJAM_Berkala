@@ -1,0 +1,7 @@
+~ Kid_Day1_1
+do CutsceneManager.move_player("Spot1", 1.5)
+Lara: “Huwaa, Bosen sekali, ga ada kegiatan…” [#neutral]
+Lara:  “Semuanya selalu sibuk ih...” [#neutral]
+Lara: “Mama kapan pulang ya…, pengen main sama mama…” [#pout]
+
+=> END

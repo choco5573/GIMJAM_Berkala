@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/npc/Npc.gd" id="1_npc"]
+
+[node name="MamaNPC" type="Node2D" groups=["npc", "mama"]]
+z_index = 1
+script = ExtResource("1_npc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

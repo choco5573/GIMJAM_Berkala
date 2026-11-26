@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://d2dv0ypj87xfx"]
+
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_cq8dk"]
+[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish.png" id="5_fish"]
+[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/water.png" id="6_water"]
+[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish_food_box.png" id="7_box"]
+[ext_resource type="Texture2D" path="res://assets/tasks/fish_feeding/fish_food.png" id="8_food"]
+[ext_resource type="Script" uid="uid://bp0q0tea1c82a" path="res://tasks/fish_feeding_game/Fish_Feeding_Game_UI.gd" id="1_hasal"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fish")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bx8n8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fish")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FishFeedingGameUi" type="Control" unique_id=1959890100]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hasal")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=39661637]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="Aquarium" type="TextureRect" parent="." unique_id=1842068011]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 365.0
+offset_bottom = 273.0
+texture = ExtResource("6_water")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Fishes" type="Control" parent="Aquarium" unique_id=963601136]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fish1" type="AnimatedSprite2D" parent="Aquarium/Fishes" unique_id=1123141337]
+position = Vector2(300, 184)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+autoplay = "default"
+scale = Vector2(1.5, 1.5)
+
+[node name="Fish2" type="AnimatedSprite2D" parent="Aquarium/Fishes" unique_id=2000319914]
+position = Vector2(45, 97)
+sprite_frames = SubResource("SpriteFrames_bx8n8")
+scale = Vector2(1.5, 1.5)
+
+[node name="FoodDrop" type="CPUParticles2D" parent="Aquarium" unique_id=773350225]
+position = Vector2(145, 0)
+emitting = false
+texture = ExtResource("8_food")
+
+[node name="FoodCan" type="TextureRect" parent="." unique_id=633067126]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("7_box")
+expand_mode = 1

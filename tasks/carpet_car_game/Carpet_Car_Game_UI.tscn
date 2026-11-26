@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cvx7oo4jo2gh2"]
+
+[ext_resource type="Script" uid="uid://ckac20suo3jne" path="res://tasks/carpet_car_game/Carpet_Car_Game_UI.gd" id="1_lydbu"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_vtgc7"]
+[ext_resource type="Texture2D" path="res://assets/tasks/carpet_car/bombocar.png" id="3_cars"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car_1"]
+atlas = ExtResource("3_cars")
+region = Rect2(2, 1, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car_2"]
+atlas = ExtResource("3_cars")
+region = Rect2(19, 1, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car_3"]
+atlas = ExtResource("3_cars")
+region = Rect2(2, 17, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_car_4"]
+atlas = ExtResource("3_cars")
+region = Rect2(19, 17, 10, 14)
+
+[node name="CarpetCarGameUi" type="Control" unique_id=468111986]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lydbu")
+obstacle_textures = Array[Texture2D]([SubResource("AtlasTexture_car_2"), SubResource("AtlasTexture_car_3"), SubResource("AtlasTexture_car_4")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1794589501]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = 1.0
+offset_right = 171.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="RoadArea" type="Control" parent="ColorRect" unique_id=566093537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Road1" type="TextureRect" parent="ColorRect/RoadArea" unique_id=1439360645]
+layout_mode = 0
+offset_right = 326.0
+offset_bottom = 449.0
+
+[node name="Road2" type="TextureRect" parent="ColorRect/RoadArea" unique_id=570399632]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 330.0
+offset_bottom = 466.0
+
+[node name="Obstacles" type="Control" parent="ColorRect/RoadArea" unique_id=1521621492]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerCar" type="TextureRect" parent="ColorRect/RoadArea" unique_id=242905902]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 222.0
+offset_right = 172.0
+offset_bottom = 250.0
+texture = SubResource("AtlasTexture_car_1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/RoadArea" unique_id=2073951244]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_vertical = 2

@@ -1,0 +1,16 @@
+~ Kid_Day1_2
+do CutsceneManager.show_mama(252, 146, "right")
+
+Lara: “Mamaa.”[#happy]
+
+do CutsceneManager.set_camera("Cam2", 1.5)
+do CutsceneManager.move_player("Spot1", 1)
+Mama: “Eh Putri kesayangan mama, Larassati Ajeng Pramudya, gimana anak mama dirumah?” [#smile]
+Lara: “Lara bosen banget ma, Lara gak bisa ngapa-ngapain dirumah..” [#pout]
+
+Lara: “Ma.., Ayo main sama Lara, Lara kangen main sama mama lagi, udah lama kan mama gk main sama Lara.” [#superHappy]
+Mama: "..." [#neutral]
+Mama: “Hmm. Baiklah nak, ayo main sama Mama.” [#smile]
+Mama: "..." [#neutral]
+Mama: “Iya juga, sudah lumayan jarang mama bermain sama kamu, boleh deh nak.” [#smile]
+=> END

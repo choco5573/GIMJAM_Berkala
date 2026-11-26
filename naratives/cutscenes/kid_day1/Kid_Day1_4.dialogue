@@ -1,0 +1,11 @@
+~ Kid_Day1_4
+do CutsceneManager.show_mama(180, 118, "right")
+do CutsceneManager.move_player("Spot1", 0)
+Lara : “Mama, sekarang.., mau main Petak Umpet tidak sama Lara?” [#happy]
+Mama : “Lara… Mama istirahat dulu ya sebentar.., boleh tidak?” [#worried]
+Lara : “Aww…” [#pout]
+
+Mama : “baiklah, kalau begitu sekali lagi saja, okay? Setelah itu, mama boleh istrahat ya nak?” [#smile]
+Lara : “Oh!! baik!! Yei!!” [#superHappy]
+[i](Lara menutup mata dan berhitung sampai sepuluh... Mama bersembunyi di halaman!)[/i]
+=> END

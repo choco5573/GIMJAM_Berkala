@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://d0165n5chgjjg"]
+
+[ext_resource type="Script" uid="uid://cn4afl2kvmbv3" path="res://scripts/UI_scripts/Hud.gd" id="1_yixhe"]
+[ext_resource type="Texture2D" uid="uid://dvcaflgly2jex" path="res://assets/sprites/UI_sprites/KeyboardMouseUI_AssetPack/Individual Tiles/(Recommended) With Anti-Aliasing/Letters + Numbers/LettersNumbers5.png" id="2_4n7mi"]
+[ext_resource type="Texture2D" uid="uid://bcyqirkfb2dky" path="res://assets/sprites/UI_sprites/KeyboardMouseUI_AssetPack/Individual Tiles/(Recommended) With Anti-Aliasing/Letters + Numbers/LettersNumbers6.png" id="3_uk570"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2wx0"]
+atlas = ExtResource("2_4n7mi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gppie"]
+atlas = ExtResource("3_uk570")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2wx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gppie")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_yixhe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTopContainer/RoomLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ijstf"]
+resource_name = "label_fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTopContainer/RoomLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4n7mi"]
+_data = {
+&"RESET": SubResource("Animation_yixhe"),
+&"label_fade": SubResource("Animation_ijstf")
+}
+
+[node name="Hud" type="CanvasLayer" unique_id=555335849]
+script = ExtResource("1_yixhe")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902046518]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RightTopContainer" type="HBoxContainer" parent="MarginContainer" unique_id=967491262]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+alignment = 2
+
+[node name="Setting" type="Button" parent="MarginContainer/RightTopContainer" unique_id=157992293]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "Setting"
+
+[node name="LeftTopContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1144420417]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="RoomLabelTimer" type="Timer" parent="MarginContainer/LeftTopContainer" unique_id=107563769]
+one_shot = true
+
+[node name="DayLabel" type="Label" parent="MarginContainer/LeftTopContainer" unique_id=453206614]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DAY X"
+
+[node name="RoomLabel" type="Label" parent="MarginContainer/LeftTopContainer" unique_id=1184404261]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "CURRENT ROOM"
+
+[node name="RightBottomContainer" type="HBoxContainer" parent="MarginContainer" unique_id=721899411]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="InteractionButton" type="AnimatedSprite2D" parent="MarginContainer/RightBottomContainer" unique_id=1614774931]
+position = Vector2(-13, -15)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer" unique_id=2060350502]
+libraries/ = SubResource("AnimationLibrary_4n7mi")
+
+[node name="TaskList" type="VBoxContainer" parent="MarginContainer" unique_id=717798636]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+
+[connection signal="timeout" from="MarginContainer/LeftTopContainer/RoomLabelTimer" to="." method="_on_room_label_timer_timeout"]

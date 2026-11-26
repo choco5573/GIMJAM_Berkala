@@ -1,0 +1,13 @@
+~ Teen_Day3_3
+Mama: Loh disini rupanya anak Mama... [#smile]
+Lara: Eh, Mama.. [#panic]
+Mama: Lara..., kamu tahu kan, kalau bentar lagi UTBK. [#neutral]
+[i](Mama menatap Lara, seperti tidak sudi merusak kebahagiaan anaknya.)[/i]
+Mama: Mama minta tolong.., tolong Lara fokus dulu ya nak buat UTBK. [#worried]
+Mama: Soalnya masa depan Lara.., nanti Lara yang tentuin sendiri.. [#worried]
+[i](Mama menarik napas berat.)[/i]
+Mama: Tolong ya nak.., untuk sekarang, fokus dulu, main bisa nanti. [#scarysmile]
+Lara: ... [#dotdotdot]
+[i](Lara menundukkan kepala, turun dari ayunan, dan perlahan berjalan kembali ke kamarnya.)[/i]
+do CutsceneManager.move_player_to(30, 200, 2.0)
+=> END

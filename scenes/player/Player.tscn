@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://1p8gp08roele"]
+
+[ext_resource type="Script" uid="uid://0j8cm6428v0o" path="res://scripts/scene_scripts/player_scripts/Player.gd" id="1_gfjak"]
+[ext_resource type="Texture2D" uid="uid://caux2i3yu5i6j" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_front 2.png" id="2_7oing"]
+[ext_resource type="Texture2D" uid="uid://def65nsbx4kjn" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_front 1.png" id="2_kvwax"]
+[ext_resource type="Texture2D" uid="uid://dkew5lwychry5" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_front 3.png" id="3_5stf6"]
+[ext_resource type="Texture2D" uid="uid://cagg6782h564t" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_front 1.png" id="4_180ig"]
+[ext_resource type="Texture2D" uid="uid://cmptn5wlus60s" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_front_1.png" id="4_x3qp0"]
+[ext_resource type="Texture2D" uid="uid://dgbd13ujcok03" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_right 1.png" id="5_20koh"]
+[ext_resource type="Texture2D" uid="uid://cyvhcboix4v1n" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_front 2.png" id="5_76i7i"]
+[ext_resource type="Texture2D" uid="uid://b54r0phvi3u2x" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_front 3.png" id="6_mndc6"]
+[ext_resource type="Texture2D" uid="uid://bhsc1imhxy8cn" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_right 2.png" id="6_ov1oi"]
+[ext_resource type="Texture2D" uid="uid://dwlski6mkg7rk" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_right 3.png" id="7_rn7t0"]
+[ext_resource type="Texture2D" uid="uid://dkapjymelg72o" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_back 1.png" id="8_8qjgm"]
+[ext_resource type="Texture2D" uid="uid://ck35rn0ms5dmf" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_front_2.png" id="9_1hh02"]
+[ext_resource type="Texture2D" uid="uid://bh1udkmnwslld" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_back 2.png" id="9_ejd4k"]
+[ext_resource type="Texture2D" uid="uid://1pju7ob570sb" path="res://assets/sprites/characters_sprites/Lara (kid)/PNG/lara_back 3.png" id="10_2xrq6"]
+[ext_resource type="Texture2D" uid="uid://dbfa0q71o7abk" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_front_3.png" id="10_5ttev"]
+[ext_resource type="Texture2D" uid="uid://suy7ohk4pcqn" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 1.png" id="14_geaob"]
+[ext_resource type="Texture2D" uid="uid://b3sf64ty4mdnx" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 2.png" id="15_qsmrd"]
+[ext_resource type="Texture2D" uid="uid://mljnuefjscjj" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 3.png" id="16_jtlb7"]
+[ext_resource type="Texture2D" uid="uid://iwu3fo663gf3" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 1.png" id="17_ye1dr"]
+[ext_resource type="Texture2D" uid="uid://cgt8ste7wsksm" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 2.png" id="18_bvphr"]
+[ext_resource type="Texture2D" uid="uid://8gv7l5dwqbsl" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 3.png" id="19_05p8n"]
+[ext_resource type="Texture2D" uid="uid://5gvdevktuxng" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_1.png" id="23_eac1a"]
+[ext_resource type="Texture2D" uid="uid://beq23xfsyfp02" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_2.png" id="24_ijyjs"]
+[ext_resource type="Texture2D" uid="uid://bx1q0tfhln1pm" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_3.png" id="25_a4b0l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kvwax")
+}],
+"loop": 1,
+"name": &"idle Adult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_180ig")
+}],
+"loop": 1,
+"name": &"idle Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x3qp0")
+}],
+"loop": 1,
+"name": &"idle Teen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kvwax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76i7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mndc6")
+}],
+"loop": 1,
+"name": &"walk_down Adult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7oing")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5stf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_180ig")
+}],
+"loop": 1,
+"name": &"walk_down Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x3qp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1hh02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5ttev")
+}],
+"loop": 1,
+"name": &"walk_down Teen",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"walk_horizontal Adult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_20koh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ov1oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rn7t0")
+}],
+"loop": 1,
+"name": &"walk_horizontal Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_geaob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qsmrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jtlb7")
+}],
+"loop": 1,
+"name": &"walk_horizontal Teen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ye1dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bvphr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_05p8n")
+}],
+"loop": 1,
+"name": &"walk_up Adult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8qjgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ejd4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2xrq6")
+}],
+"loop": 1,
+"name": &"walk_up Kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_eac1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ijyjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_a4b0l")
+}],
+"loop": 1,
+"name": &"walk_up Teen",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="CapsuleShape2D_7oing"]
+size = Vector2(14, 8)
+
+[node name="Player" type="CharacterBody2D" unique_id=1365855226 groups=["Lara", "player"]]
+z_index = 1
+script = ExtResource("1_gfjak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=318297340]
+sprite_frames = SubResource("SpriteFrames_5h11f")
+animation = &"walk_up Teen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1485095517]
+position = Vector2(0, 24)
+shape = SubResource("CapsuleShape2D_7oing")

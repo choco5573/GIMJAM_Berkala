@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c4ont1ipy1kln"]
+
+[ext_resource type="Script" uid="uid://537hlia5hfhp" path="res://tasks/fish_feeding_game/Fish_Feeding_Game_Task.gd" id="1_ehwet"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_lc3sr"]
+[ext_resource type="PackedScene" uid="uid://d2dv0ypj87xfx" path="res://tasks/fish_feeding_game/FishFeedingGameUI.tscn" id="3_ehwet"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej6ny"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ehwet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0buqm"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="FishFeedingGameTask" type="Node2D" unique_id=1270031374]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ehwet")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=741484484]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1559159979]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_ej6ny")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=370547476]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_lc3sr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=594580943]
+physics_material_override = SubResource("PhysicsMaterial_ehwet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=807540239]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_0buqm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2077787106]
+visible = false
+
+[node name="FishFeedingGameUi" parent="CanvasLayer" unique_id=1959890100 instance=ExtResource("3_ehwet")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

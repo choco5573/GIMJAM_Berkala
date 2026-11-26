@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://drm3lfkgir5b8"]
+
+[ext_resource type="Script" uid="uid://btskvdkfina5k" path="res://tasks/swing_game/Swing_Game_UI.gd" id="1_dukty"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eal4v"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_dukty"]
+font_size = 14
+
+[node name="SwingGameUI" type="Control" unique_id=696158963]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("1_dukty")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=74188551]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=997096036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2059582714]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1565699860]
+layout_mode = 2
+text = "Press Space in the Green Cone!"
+label_settings = SubResource("LabelSettings_eal4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bar" type="ColorRect" parent="MarginContainer/VBoxContainer" unique_id=1319553197]
+custom_minimum_size = Vector2(280, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+offset_transform_enabled = true
+color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+
+[node name="GreenZone" type="ColorRect" parent="MarginContainer/VBoxContainer/Bar" unique_id=404970799]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+color = Color(0, 1, 0, 1)
+
+[node name="Marker" type="ColorRect" parent="MarginContainer/VBoxContainer/Bar" unique_id=1585156746]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 24.0
+color = Color(1, 0, 0, 1)
+
+[node name="Indicator" type="Label" parent="MarginContainer/VBoxContainer" unique_id=108335441]
+layout_mode = 2
+text = "X/N"
+label_settings = SubResource("LabelSettings_dukty")

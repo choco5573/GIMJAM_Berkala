@@ -1,0 +1,10 @@
+~ Adult_Day1_1
+[i](Lara terbangun, lalu bangun dari tempat tidurnya.)[/i]
+Lara: ... [#tireed]
+Lara: Sudah pagi, ya? [#neutral]
+Lara: Rapatnya... [#tireed]
+Lara: Iya... Aku harus ganti baju. [#neutral]
+do CutsceneManager.fade_out(0.5)
+[i](Lara mengganti bajunya dengan seragam kerja, lalu duduk untuk memulai rapat.)[/i]
+do CutsceneManager.fade_in(0.5)
+=> END

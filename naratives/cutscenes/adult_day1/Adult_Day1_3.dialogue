@@ -1,0 +1,12 @@
+~ Adult_Day1_3
+Ibu: Oh, akhirnya kamu keluar dari kamarmu. [#neutral]
+Ibu: ...Setidaknya kamu bisa sarapan dulu kalau bangun lebih awal. [#worried]
+Lara: Maaf... [#tireed]
+Lara: Aku lupa kalau rapatnya pagi-pagi sekali. [#neutral]
+Lara: Lagipula, aku lembur tadi malam, ingat? [#tireed]
+Ibu: Kamu tetap harus mengikuti rutinitas, Lara. [#scarysmile]
+Lara: ... [#misery]
+[i](Lara hanya mengangguk. Sebelum sempat kembali ke kamarnya, ibunya memanggilnya sekali lagi.)[/i]
+Ibu: Bisakah kamu mengepel lantai juga? [#smile]
+[i](Lara tidak berkata apa-apa, tetapi menurut saja.)[/i]
+=> END

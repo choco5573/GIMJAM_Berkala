@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dl6m3aso43f0d"]
+
+[ext_resource type="Script" uid="uid://dum60rlf1pyr5" path="res://scripts/UI_scripts/Main_Menu.gd" id="1_muecg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5h11f"]
+shadow_size = 10
+shadow_color = Color(0.72464263, 0.7246426, 0.7246426, 0.3372549)
+
+[node name="MainMenu" type="Control" unique_id=751899447]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_muecg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=920858932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=42971182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1100243960]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -68.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="HeaderContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=844400896]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="VBoxContainer/HeaderContainer" unique_id=392185134]
+modulate = Color(0.016350202, 1.0761735e-06, 0.01647366, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "BERKALA (Alpha Ver)"
+label_settings = SubResource("LabelSettings_5h11f")
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=462749036]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=440075650]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=1132495812]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 8
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

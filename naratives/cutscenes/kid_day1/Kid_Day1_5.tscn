@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b54epnl6g6kae"]
+
+[node name="Kid_Day1_5" type="Node2D" unique_id=663998023]
+
+[node name="Day1_5_Cam1" type="Camera2D" parent="." unique_id=1941447672]
+position = Vector2(288, 74)
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="Spot1" type="Marker2D" parent="." unique_id=1447405598]
+position = Vector2(262, 92)

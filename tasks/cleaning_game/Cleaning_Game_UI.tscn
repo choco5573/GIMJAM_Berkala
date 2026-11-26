@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://ddn7x2kfj78cd"]
+
+[ext_resource type="Script" uid="uid://byhqga7fakn6a" path="res://tasks/cleaning_game/Cleaning_Game_UI.gd" id="1_4hel0"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_inr33"]
+[ext_resource type="Texture2D" uid="uid://bpo8uyce03j8u" path="res://assets/sprites/UI_sprites/KeyboardMouseUI_AssetPack/Individual Tiles/(Recommended) With Anti-Aliasing/Mouse Inputs/MouseInputs1.png" id="3_nkpkw"]
+[ext_resource type="Texture2D" uid="uid://bxt7b8motbfk2" path="res://assets/sprites/UI_sprites/KeyboardMouseUI_AssetPack/Individual Tiles/(Recommended) With Anti-Aliasing/Mouse Inputs/MouseInputs3.png" id="4_1jmpn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ws7n"]
+atlas = ExtResource("3_nkpkw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekvt8"]
+atlas = ExtResource("4_1jmpn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ws7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekvt8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CleaningGameUi" type="Control" unique_id=869058343]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hel0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=411652674]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="Floor" type="TextureRect" parent="." unique_id=1316084130]
+self_modulate = Color(1, 1, 1, 0.19215687)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 365.0
+offset_bottom = 273.0
+texture = ExtResource("1_inr33")
+expand_mode = 1
+
+[node name="Dirts" type="Control" parent="Floor" unique_id=542862300]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dirt1" type="TextureRect" parent="Floor/Dirts" unique_id=1620394581]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 52.0
+offset_bottom = 66.0
+texture = ExtResource("1_inr33")
+expand_mode = 1
+
+[node name="Dirt2" type="TextureRect" parent="Floor/Dirts" unique_id=657315291]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 151.0
+offset_right = 299.0
+offset_bottom = 191.0
+texture = ExtResource("1_inr33")
+expand_mode = 1
+
+[node name="Dirt3" type="TextureRect" parent="Floor/Dirts" unique_id=981766780]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 18.0
+offset_right = 220.0
+offset_bottom = 58.0
+texture = ExtResource("1_inr33")
+expand_mode = 1
+
+[node name="Dirt4" type="TextureRect" parent="Floor/Dirts" unique_id=972941484]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 93.0
+offset_right = 142.0
+offset_bottom = 133.0
+texture = ExtResource("1_inr33")
+expand_mode = 1
+
+[node name="BroomHead" type="TextureButton" parent="." unique_id=1540336736]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_vertical = 4
+mouse_filter = 2
+texture_normal = ExtResource("1_inr33")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ClickHint" type="AnimatedSprite2D" parent="." unique_id=1152050730]
+position = Vector2(352, 252)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+autoplay = "default"

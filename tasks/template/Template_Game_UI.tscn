@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bsehfkl7k04id"]
+
+[ext_resource type="Script" uid="uid://udayoll4b8mq" path="res://tasks/template/Template_Game_UI.gd" id="1_hvj55"]
+
+[node name="TemplateGameUi" type="Control" unique_id=270592452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvj55")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1985440234]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 1002.0
+offset_bottom = 548.0
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1298166700]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cl0g02if4k10t"]
+
+[ext_resource type="Script" uid="uid://dr680404opqiy" path="res://tasks/hide_and_seek/hide_and_seek_game_task.gd" id="1_qyqim"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_o8qmj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rx5i5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3wukb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmplu"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="HideAndSeek" type="Node2D" unique_id=1475421380]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qyqim")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=161651275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=570226463]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_rx5i5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=477699776]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_o8qmj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=459767580]
+physics_material_override = SubResource("PhysicsMaterial_3wukb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=3522977]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_qmplu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

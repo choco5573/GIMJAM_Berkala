@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bqspvnjqaxtym"
+path="res://.godot/imported/Teen_Day1_1.dialogue-d2b60737f6e7eedd65f71c716ec48bfc.tres"
+
+[deps]
+
+source_file="res://naratives/cutscenes/teen_day1/Teen_Day1_1.dialogue"
+dest_files=["res://.godot/imported/Teen_Day1_1.dialogue-d2b60737f6e7eedd65f71c716ec48bfc.tres"]
+
+[params]
+
+defaults=true

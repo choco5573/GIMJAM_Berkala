@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bxu5o0ymc01ur"]
+
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_kqy0i"]
+[ext_resource type="Script" uid="uid://bfdonxkapq3dr" path="res://scenes/diary/Diary.gd" id="1_xudjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
+size = Vector2(58, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h11f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kqy0i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Diary" type="Area2D" unique_id=76258817]
+script = ExtResource("1_xudjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=298645990]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_5h11f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1443797784]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5h11f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,9 @@
+~ Kid_Day1_5
+do CutsceneManager.show_mama(298, 92, "left")
+do CutsceneManager.move_player("Spot1", 0)
+Lara : “Hehe, see! Lara can always find mama!” [#happy]
+Mama : “Of course you can, my smart girl.” [#smile]
+Mama : “Let mama rest now, okay? I’ll make your favorite for dinner.” [#smile]
+Lara : “Yaayy!! Okay!!” [#superHappy]
+Lara : “We’ll play more next time!!” [#happy]
+=> END

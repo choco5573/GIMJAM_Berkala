@@ -1,0 +1,21 @@
+~ Kid_Day4
+[i](Lara sedang main di luar, memandangi kolam.)[/i]
+Lara: Hadeh.., bosen banget... [#pout]
+do CutsceneManager.move_player_to(200, 150, 1.5)
+[i](Lara keliling-keliling halaman tanpa tujuan, lalu berhenti di samping kotak pasir.)[/i]
+[i](Krucuk... perut Lara keroncongan.)[/i]
+[i](Entah kenapa, kotak pasir itu kelihatan mirip sereal...)[/i]
+Lara: hmm... [#neutral]
+do CutsceneManager.move_player_to(255, 130, 0.8)
+do CutsceneManager.fade_out(0.5)
+[i](Nyam... nyam...)[/i]
+do CutsceneManager.fade_in(0.3)
+do CutsceneManager.show_mama(20, 200, "right")
+Mama: LARA!, KAMU NGAPAIN SAYANG! [#worried]
+do CutsceneManager.mama_walk_to(232, 138, 1.0)
+[i](Mama dengan cepat menghampiri Lara dan menggendongnya jauh dari kotak pasir.)[/i]
+Mama: Aduh Lara.., Mama lagi masak di dapur, muntahin lagi nak pasirnya. [#worried]
+Lara: ... [#dead]
+[i](Lara memuntahkan pasirnya.)[/i]
+[i](Waktu terus berjalan...)[/i]
+=> END

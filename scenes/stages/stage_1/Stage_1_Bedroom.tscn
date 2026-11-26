@@ -1,0 +1,205 @@
+[gd_scene format=4 uid="uid://db2j141f8cg6e"]
+
+[ext_resource type="Script" uid="uid://dhgrdf5e1ab0y" path="res://scripts/scene_scripts/stages/stage_1_scipts/Stage_1_Bedroom.gd" id="1_ojuir"]
+[ext_resource type="PackedScene" uid="uid://d0165n5chgjjg" path="res://UI/HUD.tscn" id="2_2q7g8"]
+[ext_resource type="Texture2D" uid="uid://da15x18wjpxk2" path="res://assets/scenes/bedroom/dinding kamar tidur_childhood.png" id="2_116jy"]
+[ext_resource type="PackedScene" uid="uid://douog27oefphu" path="res://UI/Room_Transition.tscn" id="2_tloqg"]
+[ext_resource type="PackedScene" uid="uid://1p8gp08roele" path="res://scenes/player/Player.tscn" id="2_x316d"]
+[ext_resource type="Texture2D" uid="uid://pmcuu4nsh1bq" path="res://assets/scenes/bedroom/lantai kamar tidur_childhood.png" id="3_dauvd"]
+[ext_resource type="PackedScene" uid="uid://cq801bd4oqklp" path="res://scenes/Door/Door.tscn" id="4_8f31m"]
+[ext_resource type="Texture2D" uid="uid://cieo8hjltkcxs" path="res://assets/scenes/bedroom/bed_bedroom.png" id="4_mx74v"]
+[ext_resource type="Texture2D" uid="uid://5tkjhtkmy25i" path="res://assets/scenes/bedroom/cupboard pas kecil.png" id="5_f4m4u"]
+[ext_resource type="Texture2D" uid="uid://bt8tap4373h8e" path="res://assets/scenes/bedroom/cupboard pas remaja-dewasa.png" id="6_iaxlh"]
+[ext_resource type="Texture2D" uid="uid://b8xfryqa21otb" path="res://assets/scenes/bedroom/jendela.png" id="7_3cpc1"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="7_6kcxi"]
+[ext_resource type="PackedScene" uid="uid://bxu5o0ymc01ur" path="res://scenes/diary/Diary.tscn" id="7_gy6cm"]
+[ext_resource type="Texture2D" uid="uid://5puecm0cf5s3" path="res://assets/scenes/bedroom/table_bedroom.png" id="8_gpaap"]
+[ext_resource type="PackedScene" uid="uid://cdngk76gs267y" path="res://naratives/cutscenes/kid_day1/Kid_Day1_1.tscn" id="8_gy6cm"]
+[ext_resource type="PackedScene" uid="uid://3rw61orcgrs" path="res://naratives/cutscenes/kid_day1/Kid_Day1_3.tscn" id="16_dauvd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dauvd"]
+texture = ExtResource("2_116jy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7ikc8"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_dauvd")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx74v"]
+texture = ExtResource("3_dauvd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5vvij"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_mx74v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4m4u"]
+texture = ExtResource("4_mx74v")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iaxlh"]
+texture = ExtResource("5_f4m4u")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3cpc1"]
+texture = ExtResource("6_iaxlh")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpaap"]
+texture = ExtResource("7_3cpc1")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m3u5"]
+texture = ExtResource("8_gpaap")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rk3wd"]
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_f4m4u")
+sources/1 = SubResource("TileSetAtlasSource_iaxlh")
+sources/2 = SubResource("TileSetAtlasSource_3cpc1")
+sources/3 = SubResource("TileSetAtlasSource_gpaap")
+sources/4 = SubResource("TileSetAtlasSource_2m3u5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colWallTop"]
+size = Vector2(424, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colWardrobe"]
+size = Vector2(100, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colDesk"]
+size = Vector2(133, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colBed"]
+size = Vector2(134, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeLeft"]
+size = Vector2(20, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeRight"]
+size = Vector2(20, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeBottom"]
+size = Vector2(424, 20)
+
+[node name="Stage1" type="Node2D" unique_id=635988442]
+script = ExtResource("1_ojuir")
+
+[node name="tilemaps" type="Node" parent="." unique_id=1542760475]
+
+[node name="Wall" type="TileMapLayer" parent="tilemaps" unique_id=1018677909]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAADAAAAAAAAAAEAAAAAAAAAAAABAAEAAAABAAAAAAACAAEAAAACAAAAAAADAAEAAAADAAAAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAACAAAAAAADAAIAAAADAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAABAAAAAAAGAAEAAAACAAAAAAAHAAEAAAADAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAABAAAAAAAGAAIAAAACAAAAAAAHAAIAAAADAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAACAAAAAAALAAAAAAADAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAABAAAAAAAKAAEAAAACAAAAAAALAAEAAAADAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAABAAAAAAAKAAIAAAACAAAAAAALAAIAAAADAAAAAAAAAAMAAAAAAAEAAAABAAMAAAABAAEAAAACAAMAAAACAAEAAAADAAMAAAADAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAABAAEAAAAGAAMAAAACAAEAAAAHAAMAAAADAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAABAAEAAAAKAAMAAAACAAEAAAALAAMAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_7ikc8")
+
+[node name="Floor" type="TileMapLayer" parent="tilemaps" unique_id=2010491930]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAABAAcAAgAAAAAAAAABAAgAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAACAAcAAgAAAAAAAAACAAgAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAFAAcAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAgAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAgAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAYAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAgAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAAJAAcAAgAAAAAAAAAJAAgAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAYAAgAAAAAAAAAKAAcAAgAAAAAAAAAKAAgAAgAAAAAAAAALAAUAAgAAAAAAAAALAAYAAgAAAAAAAAALAAcAAgAAAAAAAAALAAgAAgAAAAAAAAADAAcAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_5vvij")
+
+[node name="Decor" type="TileMapLayer" parent="tilemaps" unique_id=15081907]
+z_index = -1
+scale = Vector2(2.1, 2.1)
+tile_map_data = PackedByteArray("AAAAAAIAAQAAAAEAAAAAAAMAAQAAAAIAAAAAAAQAAQAAAAMAAAABAAIAAQABAAEAAAABAAMAAQABAAIAAAABAAQAAQABAAMAAAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAAAAAcAAAAAAAEAAAABAAcAAAABAAEAAAAAAAYAAAAAAAAAAAABAAYAAAABAAAAAAAEAAQABAABAAEAAAADAAMABAAAAAAAAAADAAQABAAAAAEAAAAEAAMABAABAAAAAAAEAAAAAwAAAAAAAAAEAAEAAwAAAAEAAAADAAAAAwAAAAAAAAADAAEAAwAAAAEAAAA=")
+tile_set = SubResource("TileSet_rk3wd")
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=1071477686]
+
+[node name="WallTop" type="CollisionShape2D" parent="Collisions" unique_id=1959167398]
+position = Vector2(192.0, 64.0)
+shape = SubResource("RectangleShape2D_colWallTop")
+
+[node name="Wardrobe" type="CollisionShape2D" parent="Collisions" unique_id=1302102035]
+position = Vector2(67.0, 147.5)
+shape = SubResource("RectangleShape2D_colWardrobe")
+
+[node name="Desk" type="CollisionShape2D" parent="Collisions" unique_id=1940099285]
+position = Vector2(268.5, 147.5)
+shape = SubResource("RectangleShape2D_colDesk")
+
+[node name="Bed" type="CollisionShape2D" parent="Collisions" unique_id=1777652994]
+position = Vector2(67.0, 234.0)
+shape = SubResource("RectangleShape2D_colBed")
+
+[node name="EdgeLeft" type="CollisionShape2D" parent="Collisions" unique_id=1099975904]
+position = Vector2(-10.0, 144.0)
+shape = SubResource("RectangleShape2D_colEdgeLeft")
+
+[node name="EdgeRight" type="CollisionShape2D" parent="Collisions" unique_id=1070302523]
+position = Vector2(394.0, 144.0)
+shape = SubResource("RectangleShape2D_colEdgeRight")
+
+[node name="EdgeBottom" type="CollisionShape2D" parent="Collisions" unique_id=1190580830]
+position = Vector2(192.0, 298.0)
+shape = SubResource("RectangleShape2D_colEdgeBottom")
+
+[node name="Hud" parent="." unique_id=555335849 instance=ExtResource("2_2q7g8")]
+
+[node name="RoomTransition" parent="." unique_id=723497583 instance=ExtResource("2_tloqg")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1108786158]
+position = Vector2(192, 144)
+
+[node name="Player" parent="." unique_id=1365855226 instance=ExtResource("2_x316d")]
+position = Vector2(150, 225)
+
+[node name="Door" parent="." unique_id=545505144 instance=ExtResource("4_8f31m")]
+position = Vector2(384, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=557583233]
+modulate = Color(1, 1, 1, 0.36862746)
+position = Vector2(-9.536743e-06, 9.536743e-06)
+scale = Vector2(0.43749982, 0.41796887)
+texture = ExtResource("7_6kcxi")
+
+[node name="Diary" parent="." unique_id=76258817 instance=ExtResource("7_gy6cm")]
+position = Vector2(264, 118)
+
+[node name="Tasks" type="Node2D" parent="." unique_id=506527835]
+
+[node name="CarpetCarMark" type="Marker2D" parent="Tasks" unique_id=1770055283]
+position = Vector2(147, 151)
+
+[node name="DeskMark" type="Marker2D" parent="Tasks" unique_id=795425564]
+position = Vector2(215, 172)
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=1714479224]
+
+[node name="Kid_Day1_1" parent="Cutscenes" unique_id=794005267 instance=ExtResource("8_gy6cm")]
+
+[node name="Kid_Day1_3" parent="Cutscenes" unique_id=1962076941 instance=ExtResource("16_dauvd")]

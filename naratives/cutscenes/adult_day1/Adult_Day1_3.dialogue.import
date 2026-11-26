@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://mshovlsae475"
+path="res://.godot/imported/Adult_Day1_3.dialogue-b973bd7de226f0e5eac7eb859b96f1b7.tres"
+
+[deps]
+
+source_file="res://naratives/cutscenes/adult_day1/Adult_Day1_3.dialogue"
+dest_files=["res://.godot/imported/Adult_Day1_3.dialogue-b973bd7de226f0e5eac7eb859b96f1b7.tres"]
+
+[params]
+
+defaults=true

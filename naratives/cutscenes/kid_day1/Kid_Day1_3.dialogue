@@ -1,0 +1,19 @@
+~ Kid_Day1_3
+do CutsceneManager.show_mama(150, 238, "left")
+do CutsceneManager.set_camera("Day1_3_Cam1", 0)
+Lara : “Yaay, Mama lihat tidak Lara berhasil?” [#superHappy]
+Mama : “Anak Mama pinter banget” [#smile]
+Lara : “Hmm..” [#neutral]
+Lara : “Mama, Lara liat Mama sering banget pake make up sebelum kerja” [#neutral]
+Lara : “Boleh tidak Mama, ajarin Lara cara pake make up?” [#happy]
+Mama : “Ehh, tapi kan Lara masih kecil, mana boleh” [#worried]
+Lara : “Lara Tahu!, gimana kalo Lara latihan dulu  di wajah mama.” [#pout]
+
+do CutsceneManager.move_player("Spot1", 1)
+Lara : “Hmm..” [#neutral]
+Lara : “Oh! Lara bisa pake yang ini!!” [#happy]
+
+Lara : “Lihat! Mama jadi cantik banget sekarang!” [#superHappy]
+Mama : “...Haha.. tentu saja, anak ku tercinta.” [#scarysmile]
+
+=> END

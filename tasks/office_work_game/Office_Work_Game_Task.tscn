@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d2ngbpge18iue"]
+
+[ext_resource type="Script" uid="uid://00yugt8f21uj" path="res://tasks/office_work_game/Office_Work_Game_Task.gd" id="1_qgqm3"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_8gdab"]
+[ext_resource type="PackedScene" uid="uid://dh3x4q8ni7ufk" path="res://tasks/office_work_game/Office_Work_Game_UI.tscn" id="3_3o5pc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdd5s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_koxal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exjy2"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="OfficeWorkGame" type="Node2D" unique_id=195391376]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qgqm3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2017565969]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=832402710]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_mdd5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=122628050]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_8gdab")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=1129999709]
+physics_material_override = SubResource("PhysicsMaterial_koxal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=647443799]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_exjy2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1895357148]
+visible = false
+
+[node name="OfficeWorkGameUi" parent="CanvasLayer" unique_id=1053954740 instance=ExtResource("3_3o5pc")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

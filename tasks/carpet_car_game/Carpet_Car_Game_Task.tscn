@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dkryynl2bdelg"]
+
+[ext_resource type="Script" uid="uid://pj8rvt7i22yy" path="res://tasks/carpet_car_game/Carpet_Car_Game_Task.gd" id="1_oo8l2"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_10lwy"]
+[ext_resource type="PackedScene" uid="uid://cvx7oo4jo2gh2" path="res://tasks/carpet_car_game/Carpet_Car_Game_UI.tscn" id="3_0qin0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qin0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5txan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxuc"]
+size = Vector2(21.11111, 21.11111)
+
+[node name="CarpetCarGameTask" type="Node2D" unique_id=1718282321]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_oo8l2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=241128077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1398378454]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_0qin0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1110931758]
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_10lwy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=872738164]
+physics_material_override = SubResource("PhysicsMaterial_5txan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=712733384]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_ekxuc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1711051339]
+visible = false
+
+[node name="CarpetCarGameUi" parent="CanvasLayer" unique_id=468111986 instance=ExtResource("3_0qin0")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

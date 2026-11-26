@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://ct6vowl33nvou"
+path="res://.godot/imported/Adult_Day1_4.dialogue-7c97a576c9eababdcfed09dab00e1feb.tres"
+
+[deps]
+
+source_file="res://naratives/cutscenes/adult_day1/Adult_Day1_4.dialogue"
+dest_files=["res://.godot/imported/Adult_Day1_4.dialogue-7c97a576c9eababdcfed09dab00e1feb.tres"]
+
+[params]
+
+defaults=true

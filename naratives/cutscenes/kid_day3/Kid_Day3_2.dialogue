@@ -1,0 +1,20 @@
+~ Kid_Day3_2
+Lara: Capek..., tapi asik banget.. [#happy]
+[i](Lara menengok ke sekeliling ruangan.)[/i]
+Lara: Baiklah..., AYO BERPETUALANG!!! [#superHappy]
+do CutsceneManager.fade_out(0.8)
+[i](Lara berpetualang di ruang tamu sampai sore...)[/i]
+do CutsceneManager.fade_in(0.8)
+do CutsceneManager.show_mama(305, 176, "left")
+do CutsceneManager.mama_walk_to(262, 172, 1.2)
+[i](Mama pulang, tapi terlihat sangat capek.)[/i]
+Lara: Mama! [#superHappy]
+Lara: Mama! Ayo main sama Lara.., Lara bosen banget daritadi. [#happy]
+Mama: Umm.. [#worried]
+Mama: Nanti dulu ya Nak, Mama baru pulang kerja.. [#worried]
+Lara: Tapi Mama kemarin bilang... [#pout]
+[i](Mama meletakkan barang-barangnya dan pergi ke kamarnya. Lara hanya bisa menatap tempat Mama berdiri tadi.)[/i]
+do CutsceneManager.mama_walk_to(95, 205, 2.5)
+Lara: Oh okay... [#pout]
+Lara: Baiklah.... [#neutral]
+=> END

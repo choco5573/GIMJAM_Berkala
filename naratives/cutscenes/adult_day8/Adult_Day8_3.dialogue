@@ -1,0 +1,21 @@
+~ Adult_Day8_3
+[i](Lara menatap ayunan yang dulu sering dia mainkan.)[/i]
+Lara: Sudah berapa lama ya? [#neutral]
+do CutsceneManager.move_player_to(257, 105, 2.5)
+[i](Dia tidak tahu kenapa, tapi dia merasa perlu duduk kembali di ayunan itu.)[/i]
+Lara: ... [#tireed]
+Lara: Aku rindu bermain di sini. [#neutral]
+Lara: Aku rindu teman-temanku. Aku penasaran bagaimana kabar mereka... [#neutral]
+Lara: Aku sudah tidak berbicara dengan mereka sejak... Sudah berapa lama? [#misery]
+Lara: Mereka mungkin sudah melupakanku sekarang. [#misery]
+[i](Lara berayun dalam keheningan.)[/i]
+Lara: Aku rindu masa kecilku. [#tireed]
+Lara: Aku tidak bisa berbuat banyak, tapi kenapa... [#misery]
+Lara: Aku merindukan masa lalu? [#tireed]
+Lara: Untuk siapa lagi aku melakukan ini selain diriku sendiri? [#misery]
+Lara: Aku ingin melakukan begitu banyak hal. Bagaimana bisa jadi begini. [#misery]
+Lara: ...Aku tidak ingin hari ini berakhir. [#tireed]
+[i](Lara menengadah, melihat dua wanita paruh baya. Keduanya tampak sedang berjalan-jalan dan benar-benar menikmati waktu mereka, meskipun usianya sudah tidak muda lagi.)[/i]
+Lara: Ah. [#neutral]
+Lara: Mungkin belum terlambat... [#lightsmile]
+=> END

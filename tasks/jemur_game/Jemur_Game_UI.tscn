@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://buc4bcamal4ks"]
+
+[ext_resource type="Script" uid="uid://dtv00f3ukaotc" path="res://tasks/jemur_game/Jemur_Game_UI.gd" id="1_5fj8j"]
+[ext_resource type="PackedScene" uid="uid://dyt5ihevhia1s" path="res://tasks/jemur_game/thingies/placeholder.tscn" id="2_njg2x"]
+[ext_resource type="PackedScene" uid="uid://cgg24ypeybn2o" path="res://tasks/jemur_game/thingies/clothes.tscn" id="3_nu2xx"]
+
+[node name="JemurGameUi" type="Control" unique_id=270592452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5fj8j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=962206028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1072424465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Placeholder" parent="MarginContainer" unique_id=912208980 instance=ExtResource("2_njg2x")]
+position = Vector2(67, 92)
+
+[node name="Placeholder2" parent="MarginContainer" unique_id=1498957169 instance=ExtResource("2_njg2x")]
+position = Vector2(174, 117)
+
+[node name="Placeholder3" parent="MarginContainer" unique_id=473072763 instance=ExtResource("2_njg2x")]
+position = Vector2(311, 108)
+
+[node name="Clothes" parent="MarginContainer" unique_id=1064878870 instance=ExtResource("3_nu2xx")]
+position = Vector2(324.99997, 221.99998)
+scale = Vector2(0.4, 0.4)

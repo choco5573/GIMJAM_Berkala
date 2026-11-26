@@ -1,0 +1,195 @@
+[gd_scene format=4 uid="uid://nv1ntgv44fmh"]
+
+[ext_resource type="Script" uid="uid://bhpwagmlis66p" path="res://scripts/scene_scripts/stages/stage_3_scripts/Stage_3_Bedroom.gd" id="1_awn2j"]
+[ext_resource type="PackedScene" uid="uid://d0165n5chgjjg" path="res://UI/HUD.tscn" id="1_vg3u0"]
+[ext_resource type="Texture2D" uid="uid://da15x18wjpxk2" path="res://assets/scenes/bedroom/dinding kamar tidur_childhood.png" id="2_kg2ex"]
+[ext_resource type="PackedScene" uid="uid://douog27oefphu" path="res://UI/Room_Transition.tscn" id="2_wmpup"]
+[ext_resource type="Texture2D" uid="uid://pmcuu4nsh1bq" path="res://assets/scenes/bedroom/lantai kamar tidur_childhood.png" id="3_t8do5"]
+[ext_resource type="PackedScene" uid="uid://1p8gp08roele" path="res://scenes/player/Player.tscn" id="3_wg7up"]
+[ext_resource type="PackedScene" uid="uid://cq801bd4oqklp" path="res://scenes/Door/Door.tscn" id="4_awn2j"]
+[ext_resource type="Texture2D" uid="uid://cieo8hjltkcxs" path="res://assets/scenes/bedroom/bed_bedroom.png" id="4_mbmk1"]
+[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="5_ujngs"]
+[ext_resource type="Texture2D" uid="uid://5tkjhtkmy25i" path="res://assets/scenes/bedroom/cupboard pas kecil.png" id="5_v788k"]
+[ext_resource type="Texture2D" uid="uid://bt8tap4373h8e" path="res://assets/scenes/bedroom/cupboard pas remaja-dewasa.png" id="6_eswlo"]
+[ext_resource type="Texture2D" uid="uid://b8xfryqa21otb" path="res://assets/scenes/bedroom/jendela.png" id="7_4rkt6"]
+[ext_resource type="PackedScene" uid="uid://bxu5o0ymc01ur" path="res://scenes/diary/Diary.tscn" id="7_ujngs"]
+[ext_resource type="Texture2D" uid="uid://5puecm0cf5s3" path="res://assets/scenes/bedroom/table_bedroom.png" id="8_kthuf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mn43s"]
+texture = ExtResource("2_kg2ex")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ny6og"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_mn43s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vni0d"]
+texture = ExtResource("3_t8do5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u8e47"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_vni0d")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baelg"]
+texture = ExtResource("4_mbmk1")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tedy"]
+texture = ExtResource("5_v788k")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7pus"]
+texture = ExtResource("6_eswlo")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wa15l"]
+texture = ExtResource("7_4rkt6")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhfyn"]
+texture = ExtResource("8_kthuf")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_206qm"]
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_baelg")
+sources/1 = SubResource("TileSetAtlasSource_7tedy")
+sources/2 = SubResource("TileSetAtlasSource_r7pus")
+sources/3 = SubResource("TileSetAtlasSource_wa15l")
+sources/4 = SubResource("TileSetAtlasSource_hhfyn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colWallTop"]
+size = Vector2(424, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colWardrobe"]
+size = Vector2(100, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colDesk"]
+size = Vector2(133, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colBed"]
+size = Vector2(134, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeLeft"]
+size = Vector2(20, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeRight"]
+size = Vector2(20, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_colEdgeBottom"]
+size = Vector2(424, 20)
+
+[node name="Stage3Bedroom" type="Node2D" unique_id=765873656]
+script = ExtResource("1_awn2j")
+
+[node name="tilemaps" type="Node" parent="." unique_id=306140127]
+
+[node name="Wall" type="TileMapLayer" parent="tilemaps" unique_id=378947642]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAADAAAAAAADAAAAAAAAAAEAAAAAAAAAAAABAAEAAAABAAAAAAACAAEAAAACAAAAAAADAAEAAAADAAAAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAACAAAAAAADAAIAAAADAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAABAAAAAAAGAAEAAAACAAAAAAAHAAEAAAADAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAABAAAAAAAGAAIAAAACAAAAAAAHAAIAAAADAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAAKAAAAAAACAAAAAAALAAAAAAADAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAABAAAAAAAKAAEAAAACAAAAAAALAAEAAAADAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAABAAAAAAAKAAIAAAACAAAAAAALAAIAAAADAAAAAAAAAAMAAAAAAAEAAAABAAMAAAABAAEAAAACAAMAAAACAAEAAAADAAMAAAADAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAABAAEAAAAGAAMAAAACAAEAAAAHAAMAAAADAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAABAAEAAAAKAAMAAAACAAEAAAALAAMAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_ny6og")
+
+[node name="Floor" type="TileMapLayer" parent="tilemaps" unique_id=1790586130]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAABAAcAAgAAAAAAAAABAAgAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAACAAcAAgAAAAAAAAACAAgAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAFAAcAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAgAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAgAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAYAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAgAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAAJAAcAAgAAAAAAAAAJAAgAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAYAAgAAAAAAAAAKAAcAAgAAAAAAAAAKAAgAAgAAAAAAAAALAAUAAgAAAAAAAAALAAYAAgAAAAAAAAALAAcAAgAAAAAAAAALAAgAAgAAAAAAAAADAAcAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_u8e47")
+
+[node name="Decor" type="TileMapLayer" parent="tilemaps" unique_id=77724923]
+z_index = -1
+scale = Vector2(2.1, 2.1)
+tile_map_data = PackedByteArray("AAAAAAIAAgAAAAEAAAAAAAMAAgAAAAIAAAAAAAQAAgAAAAMAAAABAAIAAgABAAEAAAABAAMAAgABAAIAAAABAAQAAgABAAMAAAAAAAEAAgAAAAAAAAABAAEAAgABAAAAAAAAAAcAAAAAAAEAAAABAAcAAAABAAEAAAAAAAYAAAAAAAAAAAABAAYAAAABAAAAAAAEAAQABAABAAEAAAADAAMABAAAAAAAAAADAAQABAAAAAEAAAAEAAMABAABAAAAAAAEAAAAAwAAAAAAAAAEAAEAAwAAAAEAAAADAAAAAwAAAAAAAAADAAEAAwAAAAEAAAA=")
+tile_set = SubResource("TileSet_206qm")
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=1283838445]
+
+[node name="WallTop" type="CollisionShape2D" parent="Collisions" unique_id=1904349165]
+position = Vector2(192.0, 64.0)
+shape = SubResource("RectangleShape2D_colWallTop")
+
+[node name="Wardrobe" type="CollisionShape2D" parent="Collisions" unique_id=278678101]
+position = Vector2(67.0, 147.5)
+shape = SubResource("RectangleShape2D_colWardrobe")
+
+[node name="Desk" type="CollisionShape2D" parent="Collisions" unique_id=1620009598]
+position = Vector2(268.5, 147.5)
+shape = SubResource("RectangleShape2D_colDesk")
+
+[node name="Bed" type="CollisionShape2D" parent="Collisions" unique_id=645449555]
+position = Vector2(67.0, 234.0)
+shape = SubResource("RectangleShape2D_colBed")
+
+[node name="EdgeLeft" type="CollisionShape2D" parent="Collisions" unique_id=777052670]
+position = Vector2(-10.0, 144.0)
+shape = SubResource("RectangleShape2D_colEdgeLeft")
+
+[node name="EdgeRight" type="CollisionShape2D" parent="Collisions" unique_id=1727771233]
+position = Vector2(394.0, 144.0)
+shape = SubResource("RectangleShape2D_colEdgeRight")
+
+[node name="EdgeBottom" type="CollisionShape2D" parent="Collisions" unique_id=593203763]
+position = Vector2(192.0, 298.0)
+shape = SubResource("RectangleShape2D_colEdgeBottom")
+
+[node name="Hud" parent="." unique_id=555335849 instance=ExtResource("1_vg3u0")]
+
+[node name="RoomTransition" parent="." unique_id=1151096404 instance=ExtResource("2_wmpup")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=754166415]
+position = Vector2(192, 144)
+
+[node name="Player" parent="." unique_id=1365855226 instance=ExtResource("3_wg7up")]
+position = Vector2(1030, 400)
+
+[node name="Door" parent="." unique_id=545505144 instance=ExtResource("4_awn2j")]
+position = Vector2(384, 225)
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1449043528]
+modulate = Color(1, 1, 1, 0.36862746)
+scale = Vector2(0.43749982, 0.41796887)
+texture = ExtResource("5_ujngs")
+
+[node name="Diary" parent="." unique_id=76258817 instance=ExtResource("7_ujngs")]
+position = Vector2(264, 118)
+
+[node name="Tasks" type="Node2D" parent="." unique_id=1363921269]
+
+[node name="DeskMark" type="Marker2D" parent="Tasks" unique_id=947876999]
+position = Vector2(215, 172)
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=1086498818]
