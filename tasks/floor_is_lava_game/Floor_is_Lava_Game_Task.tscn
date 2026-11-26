@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d3yvnnv7xdme2" path="res://tasks/floor_is_lava_game/Floor_is_Lava_Game_Task.gd" id="1_lwqev"]
 [ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_7bcbc"]
 [ext_resource type="PackedScene" uid="uid://cmjl5p8ssdyf" path="res://tasks/floor_is_lava_game/Floor_is_Lava_Game_UI.tscn" id="3_drphy"]
+[ext_resource type="Texture2D" uid="uid://csrdpf22wl4qy" path="res://tasks/floor_is_lava_game/lava.png" id="4_smew2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohnl5"]
 
@@ -37,3 +38,8 @@ shape = SubResource("RectangleShape2D_3t2bo")
 visible = false
 
 [node name="FloorIsLavaGameUi" parent="CanvasLayer" unique_id=270592452 instance=ExtResource("3_drphy")]
+
+[node name="Lava" type="Sprite2D" parent="." unique_id=1728572844]
+position = Vector2(0, -20)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_smew2")

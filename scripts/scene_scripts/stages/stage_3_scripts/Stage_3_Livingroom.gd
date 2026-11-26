@@ -23,7 +23,12 @@ func _ready() -> void:
 	load_cutscenes()
 	load_puzzles()
 
-
+func _process(delta: float) -> void:
+	if player.position.y > 155:
+		$"Sofa Back".z_index = 0
+	else:
+		$"Sofa Back".z_index = 6
+		
 func door_1_pressed():
 	GameManager.load_stage_3_Bedroom(SpawnLocation.locations["Stage_3(livingroom-bedroom)"])
 

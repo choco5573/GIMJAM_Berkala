@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c4ont1ipy1kln"]
 
 [ext_resource type="Script" uid="uid://537hlia5hfhp" path="res://tasks/fish_feeding_game/Fish_Feeding_Game_Task.gd" id="1_ehwet"]
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="1_lc3sr"]
 [ext_resource type="PackedScene" uid="uid://d2dv0ypj87xfx" path="res://tasks/fish_feeding_game/FishFeedingGameUI.tscn" id="3_ehwet"]
+[ext_resource type="Texture2D" uid="uid://mayu4l4l062c" path="res://tasks/fish_feeding_game/Pakan ikan.png" id="4_0buqm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej6ny"]
 
@@ -21,15 +21,16 @@ script = ExtResource("1_ehwet")
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_ej6ny")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=370547476]
+[node name="PakanIkan" type="Sprite2D" parent="Area2D" unique_id=407356906]
 position = Vector2(0, -20)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_lc3sr")
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("4_0buqm")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=594580943]
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/PakanIkan" unique_id=594580943]
+scale = Vector2(0.26666668, 0.26666668)
 physics_material_override = SubResource("PhysicsMaterial_ehwet")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=807540239]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/PakanIkan/StaticBody2D" unique_id=807540239]
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_0buqm")
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2xkogknhmadl"]
 
 [ext_resource type="Script" uid="uid://emkq3rkkinbm" path="res://tasks/jemur_game/Jemur_Game_Task.gd" id="1_n8kdg"]
-[ext_resource type="Texture2D" uid="uid://dyop1kcqhw2fc" path="res://icon.svg" id="2_uw7nf"]
+[ext_resource type="Texture2D" uid="uid://dum61ral4r3qs" path="res://tasks/jemur_game/kain.png" id="2_7yl38"]
 [ext_resource type="PackedScene" uid="uid://buc4bcamal4ks" path="res://tasks/jemur_game/Jemur_Game_UI.tscn" id="3_7yl38"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ohnl5"]
@@ -9,7 +9,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tlas4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3t2bo"]
-size = Vector2(21.11111, 21.11111)
+size = Vector2(9.6, 11.014494)
 
 [node name="JemurGameTask" type="Node2D" unique_id=610671696]
 scale = Vector2(0.5, 0.5)
@@ -21,15 +21,18 @@ script = ExtResource("1_n8kdg")
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_ohnl5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=895789733]
-position = Vector2(0, -20)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_uw7nf")
+[node name="Kain" type="Sprite2D" parent="Area2D" unique_id=117414341]
+position = Vector2(1, -23)
+scale = Vector2(1.5625, 1.4375)
+texture = ExtResource("2_7yl38")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Sprite2D" unique_id=2065955793]
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/Kain" unique_id=2065955793]
+position = Vector2(8, 10)
+scale = Vector2(0.4, 0.4)
 physics_material_override = SubResource("PhysicsMaterial_tlas4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Sprite2D/StaticBody2D" unique_id=352857108]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Kain/StaticBody2D" unique_id=352857108]
+position = Vector2(-21.6, -18.043488)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_3t2bo")
 
