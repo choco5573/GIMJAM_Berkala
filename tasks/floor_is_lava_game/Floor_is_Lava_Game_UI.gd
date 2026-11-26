@@ -22,7 +22,6 @@ const GOAL_ZONES: Array = [
 ]
 const ZONE_MARGIN: float = 4.0
 
-const LAVA_TEXTURE = preload("res://assets/tasks/The_Floor_is_Lava_Game/lava.png")
 # area lantai yang ditutup lava (lantai bata kanan bawah dibiarkan, itu tujuan)
 const LAVA_AREAS: Array = [
 	Rect2(86, 95, 226, 99),
@@ -131,7 +130,6 @@ func _make_lava() -> void:
 		index = floor_layer.get_index() + 1
 	for zone in LAVA_AREAS:
 		var lava = TextureRect.new()
-		lava.texture = LAVA_TEXTURE
 		lava.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		lava.stretch_mode = TextureRect.STRETCH_TILE
 		lava.position = zone.position
