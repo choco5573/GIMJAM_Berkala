@@ -90,7 +90,7 @@ Datangi tanda, tekan E. Salah = tanda jadi "x", ketemu = task selesai.
   - Kasih makan ikan: ikan, kotak pakan "Takari", butiran pakan, air kolam (`assets/tasks/fish_feeding/`).
   - Floor is Lava: tile lava menutupi lantai (lantai bata tetap aman).
   - Ayunan: animasi Lara berayun (`assets/tasks/swing/swing_anim_0-3.png`, disusun dari frame asli
-    supaya titik gantungan pas). Fase remaja hanya menampilkan rangka ayunan (belum ada gambar Lara remaja berayun).
+	supaya titik gantungan pas). Fase remaja hanya menampilkan rangka ayunan (belum ada gambar Lara remaja berayun).
   - PR: latar kertas `tugas.png`. Tutor online & UTBK: layar `utbk.png`. Rapat online: layar `utbk.png`.
   - Tugas kantor & lembur: layar `kerja.png`.
 - **Pause menu** (autoload `PauseMenu`): ESC saat jalan di stage. Continue, Settings (layar penuh on/off), Quit (ke main menu).
