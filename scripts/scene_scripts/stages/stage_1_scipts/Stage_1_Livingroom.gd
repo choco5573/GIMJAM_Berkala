@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var door_1: Area2D = $Door_1
 @onready var door_2: Area2D = $Door_2
 @onready var hud: CanvasLayer = $Hud
@@ -24,6 +25,11 @@ func _ready() -> void:
 	load_cutscenes()
 	load_puzzles()
 
+func _process(delta: float) -> void:
+	if player.position.y > 155:
+		$"Sofa Back".z_index = 0
+	else:
+		$"Sofa Back".z_index = 6
 
 func door_1_pressed():
 	GameManager.load_stage_1_Bedroom(SpawnLocation.locations["Stage_1(livingroom-bedroom)"])
