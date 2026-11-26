@@ -47,7 +47,7 @@ const TASK_HINTS: Dictionary = {
 	"belajar_tutor_online": "Drill soal tutor online",
 	"utbk": "Kerjakan UTBK",
 	"nyapu": "Menyapu",
-	"ngepel": "Mengepel lantai",
+	"ngepel": "Membersihkan lantai",
 	"jemur_baju": "Menjemur baju",
 	"rapat_online": "Ikut rapat online",
 	"tugas_kantor": "Kerjakan tugas kantor",

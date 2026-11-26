@@ -22,6 +22,8 @@ signal failed   # tidak dipakai, ada supaya skrip Node2D yang menyambung 'failed
 @onready var obstacles: Control = $ColorRect/RoadArea/Obstacles
 @onready var player_car: TextureRect = $ColorRect/RoadArea/PlayerCar
 @onready var progress_bar: ProgressBar = $ColorRect/RoadArea/ProgressBar
+const SFX_CRASH = preload("res://assets/audios/WalkingAtWall_OffTheMap.mp3")  
+var sfx: AudioStreamPlayer
 
 var running: bool = false
 var progress: float = 0.0
@@ -39,7 +41,9 @@ func _ready() -> void:
 	progress_bar.step = 0.001
 	progress_bar.show_percentage = false
 	progress_bar.fill_mode = ProgressBar.FILL_BOTTOM_TO_TOP
-
+	sfx = AudioStreamPlayer.new()
+	sfx.stream = SFX_CRASH
+	add_child(sfx)
 
 func start() -> void:
 	for obs in obstacles.get_children():
@@ -146,6 +150,7 @@ func _check_hit() -> void:
 	for obs in obstacles.get_children():
 		var obs_rect = obs.get_global_rect().grow(-hitbox_shrink)
 		if car_rect.intersects(obs_rect):
+			sfx.play()
 			progress = maxf(progress - hit_penalty, 0.0)
 			knockback = knockback_distance
 			invuln_left = invulnerable_time

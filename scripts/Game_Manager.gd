@@ -7,7 +7,7 @@ signal task_completed
 var game_paused : bool =  false
 var on_task : bool = false
 var current_phase : String = "Kid"
-var current_room : String = "bedroom"
+var current_room : String = "Bedroom"
 var current_day : String = "1"
 var interact : bool = false
 var spawn_position : Vector2 = Vector2.ZERO
@@ -100,7 +100,6 @@ func reset_progress() -> void:
 	current_room = ""
 	ToDoList.reset()
 	CutsceneManager.reset()
-
 
 # GAME QUIT
 func quit_game():

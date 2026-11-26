@@ -25,6 +25,9 @@ const SWING_FRAMES: Array = [
 ]
 const SWING_EMPTY = preload("res://assets/tasks/swing/swing_side.png")
 var swing_sprite: AnimatedSprite2D
+const SFX_HIT = preload("res://assets/audios/PressedRightyButton.mp3")   
+var sfx: AudioStreamPlayer
+
 var speed: float = 0.0
 var direction: int = 1
 var running: bool = false
@@ -34,7 +37,10 @@ func _ready() -> void:
 	indicator.text = str(current_level) + '/'+ str(len(levels))
 	set_process(false)
 	_make_swing_sprite()
-
+	sfx = AudioStreamPlayer.new()
+	sfx.stream = SFX_HIT
+	add_child(sfx)
+	start()
 
 func _make_swing_sprite() -> void:
 	var frames = SpriteFrames.new()
@@ -102,12 +108,24 @@ func check_hit() -> void:
 	var zone_right = green_zone.position.x + green_zone.size.x
 
 	if marker_center >= zone_left and marker_center <= zone_right:
+		_play_hit()
 		current_level += 1
 		if current_level > levels.size():
+
+			sfx.reparent(get_tree().current_scene)
+			sfx.finished.connect(sfx.queue_free, CONNECT_ONE_SHOT)
 			stop()
 			solved.emit()
 			return
 	else:
-		current_level = 1   # gagal: ulang dari level 1
+		current_level = 1  
 	indicator.text = str(current_level - 1) + '/' + str(len(levels))
 	start_level()
+
+
+func _play_hit() -> void:
+	if not is_instance_valid(sfx) or sfx.get_parent() != self:
+		sfx = AudioStreamPlayer.new()
+		sfx.stream = SFX_HIT
+		add_child(sfx)
+	sfx.play()

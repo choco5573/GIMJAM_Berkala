@@ -19,9 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://suy7ohk4pcqn" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 1.png" id="14_geaob"]
 [ext_resource type="Texture2D" uid="uid://b3sf64ty4mdnx" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 2.png" id="15_qsmrd"]
 [ext_resource type="Texture2D" uid="uid://mljnuefjscjj" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_right 3.png" id="16_jtlb7"]
+[ext_resource type="Texture2D" uid="uid://bu8i4cjmn6hh3" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_right_1.png" id="17_mndc6"]
 [ext_resource type="Texture2D" uid="uid://iwu3fo663gf3" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 1.png" id="17_ye1dr"]
+[ext_resource type="Texture2D" uid="uid://dmbux6eci4kay" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_right_2.png" id="18_1hh02"]
 [ext_resource type="Texture2D" uid="uid://cgt8ste7wsksm" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 2.png" id="18_bvphr"]
 [ext_resource type="Texture2D" uid="uid://8gv7l5dwqbsl" path="res://assets/sprites/characters_sprites/Lara Adult/work/lara_aw_back 3.png" id="19_05p8n"]
+[ext_resource type="Texture2D" uid="uid://p3cj0nshekel" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_right_3.png" id="19_5ttev"]
 [ext_resource type="Texture2D" uid="uid://5gvdevktuxng" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_1.png" id="23_eac1a"]
 [ext_resource type="Texture2D" uid="uid://beq23xfsyfp02" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_2.png" id="24_ijyjs"]
 [ext_resource type="Texture2D" uid="uid://bx1q0tfhln1pm" path="res://assets/sprites/characters_sprites/Lara Teen/PNG/lara_t_back_3.png" id="25_a4b0l"]
@@ -94,7 +97,16 @@ animations = [{
 "name": &"walk_down Teen",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_geaob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qsmrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jtlb7")
+}],
 "loop": 1,
 "name": &"walk_horizontal Adult",
 "speed": 5.0
@@ -115,13 +127,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_geaob")
+"texture": ExtResource("17_mndc6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_qsmrd")
+"texture": ExtResource("18_1hh02")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_jtlb7")
+"texture": ExtResource("19_5ttev")
 }],
 "loop": 1,
 "name": &"walk_horizontal Teen",
@@ -179,7 +191,7 @@ script = ExtResource("1_gfjak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=318297340]
 sprite_frames = SubResource("SpriteFrames_5h11f")
-animation = &"walk_up Teen"
+animation = &"idle Kid"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1485095517]
 position = Vector2(0, 24)
