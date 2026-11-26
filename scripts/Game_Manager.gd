@@ -90,7 +90,7 @@ func load_room(room: String, spawn: Vector2) -> void:
 
 
 # mulai game baru (dipanggil dari main menu)
-func reset_progress() -> void:
+'''func reset_progress() -> void:
 	game_paused = false
 	on_task = false
 	interact = false
@@ -99,7 +99,7 @@ func reset_progress() -> void:
 	current_day = "1"
 	current_room = ""
 	ToDoList.reset()
-	CutsceneManager.reset()
+	CutsceneManager.reset()'''
 
 # GAME QUIT
 func quit_game():
