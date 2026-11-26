@@ -34,13 +34,19 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Placeholder" parent="MarginContainer" unique_id=912208980 instance=ExtResource("2_njg2x")]
-position = Vector2(67, 92)
+position = Vector2(32, 85)
 
 [node name="Placeholder2" parent="MarginContainer" unique_id=1498957169 instance=ExtResource("2_njg2x")]
-position = Vector2(174, 117)
+position = Vector2(108, 93)
 
 [node name="Placeholder3" parent="MarginContainer" unique_id=473072763 instance=ExtResource("2_njg2x")]
-position = Vector2(311, 108)
+position = Vector2(197, 94)
+
+[node name="Placeholder4" parent="MarginContainer" unique_id=569856947 instance=ExtResource("2_njg2x")]
+position = Vector2(339, 93)
+
+[node name="Placeholder5" parent="MarginContainer" unique_id=1515059045 instance=ExtResource("2_njg2x")]
+position = Vector2(271, 90)
 
 [node name="Clothes" parent="MarginContainer" unique_id=1064878870 instance=ExtResource("3_nu2xx")]
 position = Vector2(324.99997, 221.99998)

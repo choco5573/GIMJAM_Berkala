@@ -2457,7 +2457,7 @@ size = Vector2(28, 60)
 size = Vector2(33, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_colPool"]
-size = Vector2(64, 64)
+size = Vector2(64, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_colSwingPostLeft"]
 size = Vector2(12, 12)
@@ -2524,7 +2524,7 @@ position = Vector2(48.5, 114)
 shape = SubResource("RectangleShape2D_colHedge")
 
 [node name="Pool" type="CollisionShape2D" parent="Collisions" unique_id=282511983]
-position = Vector2(96, 128)
+position = Vector2(96, 111.5)
 shape = SubResource("RectangleShape2D_colPool")
 
 [node name="SwingPostLeft" type="CollisionShape2D" parent="Collisions" unique_id=1082108443]
