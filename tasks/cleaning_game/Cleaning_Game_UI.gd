@@ -24,7 +24,6 @@ func _ready() -> void:
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = SFX_CLICK
 	add_child(sfx)
-	start()
 
 
 # judul kecil di atas: "Sapu" atau "Pel"

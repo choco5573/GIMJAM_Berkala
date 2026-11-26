@@ -19,7 +19,7 @@ var question_count: int = 3
 const BG_TUGAS = preload("res://assets/tasks/assignment/tugas.png")
 const BG_SCREEN = preload("res://assets/tasks/assignment/utbk.png")
 const AREA_TUGAS = Rect2(102, 128, 280, 125)    # kotak putih di kertas
-const AREA_SCREEN = Rect2(182, 38, 384, 157)   # panel kanan di layar
+const AREA_SCREEN = Rect2(80, 38, 190, 180)   # panel kanan di layar
 const DARK_TEXT = Color(0.15, 0.13, 0.2)
 var bg: TextureRect
 
