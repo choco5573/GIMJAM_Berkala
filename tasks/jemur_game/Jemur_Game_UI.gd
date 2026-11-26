@@ -57,8 +57,6 @@ func _ready() -> void:
 		var x = 384.0 * (i + 1) / (count + 1)
 		start_positions.append(Vector2(x, 235))
 
-	_make_line()
-
 	title_label = Label.new()
 	title_label.text = "Seret bajunya ke jemuran!"
 	title_label.position = Vector2(8, 6)
@@ -70,23 +68,6 @@ func _ready() -> void:
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = SFX_DROP
 	add_child(sfx)
-
-# tali jemuran melewati semua tempat jemuran
-func _make_line() -> void:
-	if slots.is_empty(): return
-	var line = Line2D.new()
-	line.width = 2.0
-	line.default_color = Color(0.85, 0.85, 0.85)
-	var xs: Array = []
-	for slot in slots:
-		xs.append(slot.position.x)
-	xs.sort()
-	var y = slots[0].position.y - 24
-	line.add_point(Vector2(xs[0] - 40, y))
-	line.add_point(Vector2(xs[xs.size() - 1] + 40, y))
-	holder.add_child(line)
-	holder.move_child(line, 0)
-
 
 func start() -> void:
 	placed.clear()

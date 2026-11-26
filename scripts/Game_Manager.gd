@@ -7,8 +7,8 @@ signal task_completed
 var game_paused : bool =  false
 var on_task : bool = false
 var current_phase : String = "Kid"
-var current_room : String = ""
-var current_day : String = "1"
+var current_room : String = "Livingroom"
+var current_day : String = "3"
 var interact : bool = false
 var spawn_position : Vector2 = Vector2.ZERO
 

@@ -10,7 +10,12 @@ const SpawnLocation = preload("res://scripts/Spawn_Location.gd")
 var current_room : String = "Livingroom"
 const MUSIC_Teen = preload("res://assets/audios/Teenager.mp3")  
 
-
+func _process(delta: float) -> void:
+	if player.position.y > 155:
+		$"Sofa Back".z_index = 0
+	else:
+		$"Sofa Back".z_index = 6
+		
 func _ready() -> void:
 	GameManager.current_room = current_room
 	MusicManager.play(MUSIC_Teen)
